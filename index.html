@@ -40,6 +40,9 @@
     <div class="left-col" q-class="show:isShow">
       
 <div class="overlay" style="background: #4d4d4d"></div>
+<!-- 左侧边栏（上半部分）不设置背景颜色 -->
+<!-- <div class="overlay" ></div> -->
+
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -164,7 +167,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="拉普拉斯变换的性质">拉普拉斯变换的性质</h1>
+        <span id="more"></span>
+<h1 id="拉普拉斯变换的性质">拉普拉斯变换的性质</h1>
 <table>
 <thead>
 <tr class="header">
@@ -250,6 +254,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">信号与系统</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">拉普拉斯变换性质</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -371,6 +390,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">信号与系统</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">拉普拉斯变换</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -431,67 +465,9 @@
 <h2 id="对称性质">对称性质</h2>
 <p><span class="math display">\[若f(t)\leftrightarrow F(\omega) \qquad 则F(t)\leftrightarrow2\pi f(-\omega)\]</span></p>
 <hr />
-<h2 id="线性性质">线性性质</h2>
-<p><span class="math display">\[若f_1(t)\leftrightarrow F_1(\omega)，f_2(t)\leftrightarrow F_2(\omega)\]</span></p>
-<p><span class="math display">\[则c_1f_1(t)+c_2f_2(t)\leftrightarrow c_1F_1(\omega)+c_2F_2(\omega)\]</span></p>
-<hr />
-<h2 id="奇偶虚实性">奇偶虚实性</h2>
-<p><span class="math display">\[若f(t)\leftrightarrow F(\omega) \qquad 则f(-t)\leftrightarrow F(-\omega)=F^*(\omega)\]</span></p>
-<hr />
-<h2 id="尺度变换性质">尺度变换性质</h2>
-<p><span class="math display">\[若f(t)\leftrightarrow F(\omega) \qquad 则f(at)\leftrightarrow \frac{1}{|a|}F(\frac{\omega}{a})\]</span></p>
-<hr />
-<h2 id="时移特性">时移特性</h2>
-<p><span class="math display">\[若f(t)\leftrightarrow F(\omega) \qquad 则f(t-t_0)\leftrightarrow F(\omega)e^{-j\omega t_0}\]</span></p>
-<hr />
-<h2 id="频移特性">频移特性</h2>
-<p><span class="math display">\[若f(t)\leftrightarrow F(\omega) \qquad 则f(t)e^{\pm j\omega_0t}\leftrightarrow F(\omega\mp\omega_0)\]</span></p>
-<hr />
-<h2 id="时移加尺度变换">时移加尺度变换</h2>
-<p><span class="math display">\[若f(t)\leftrightarrow F(\omega) \qquad 则f(at+b)\leftrightarrow \frac{1}{|a|}F(\frac{\omega}{a})e^{j\omega\frac{b}{a}}\]</span></p>
-<hr />
-<h2 id="时域微分特性">时域微分特性</h2>
-<p><span class="math display">\[若f(t)\leftrightarrow F(\omega) \qquad 则f&#39;(t)\leftrightarrow j\omega F(\omega)\]</span></p>
-<p><span class="math display">\[f^{(n)}(t)\leftrightarrow(j\omega)^nF(\omega)\]</span></p>
-<p><font color="red"><span class="math inline">\(注意：如果f(t)中有直流分量，应先取出直流分量，单独求傅里叶变换，余下部分再用微分性质\)</span></font></p>
-<p><strong>意义：<span class="math inline">\(F(\omega)\)</span>幅度乘<span class="math inline">\(\omega\)</span>，相位增加<span class="math inline">\(90\)</span>度</strong></p>
-<hr />
-<h2 id="时域积分特性">时域积分特性</h2>
-<p><span class="math display">\[\begin{align*}
-&amp; 若f(t)\leftrightarrow F(\omega),则：\\
-&amp; F(0)=0时，\int_{-\infty}^tf(\tau)d\tau\leftrightarrow\frac{F(\omega)}{j\omega} \\
-&amp; F(0)\neq0时，\int_{-\infty}^tf(\tau)d\tau\leftrightarrow F(\omega)\left[\frac{1}{j\omega}+\pi\delta(\omega)\right]=\pi F(0)\delta(\omega)+\frac{F(\omega)}{j\omega}
-\end{align*}\]</span></p>
-<hr />
-<h2 id="频域微分特性">频域微分特性</h2>
-<p><span class="math display">\[若f(t)\leftrightarrow F(\omega) \qquad 则tf(t)\leftrightarrow j\frac{dF(\omega)}{d\omega}\]</span></p>
-<p><span class="math display">\[-jtf(t)\leftrightarrow\frac{dF(\omega)}{d\omega}\]</span></p>
-<p><span class="math display">\[(-jt)^nf(t)\leftrightarrow\frac{d^nF(\omega)}{d\omega^n}\]</span></p>
-<p><span class="math display">\[t^nf(t)\leftrightarrow j^n\frac{d^nF(\omega)}{d\omega^n}\]</span></p>
-<hr />
-<h2 id="频域积分特性">频域积分特性</h2>
-<p><span class="math display">\[若f(t)\leftrightarrow F(\omega) \qquad 则-\frac{f(t)}{jt}+\pi f(0)\delta(t)\leftrightarrow \int_{-\infty}^\omega F(\Omega)d\Omega\]</span></p>
-<hr />
-<h2 id="卷积定理"><font color="blue">卷积定理</font></h2>
-<p><span class="math display">\[\begin{align*}
-&amp; 若\quad f_1(t)\leftrightarrow F_1(\omega) \quad f_2(t)\leftrightarrow F_2(\omega) \\
-&amp; 则\quad f_1(t)*f_2(t)\leftrightarrow F_1(\omega)F_2(\omega) \\
-&amp; 则\quad f_1(t)f_2(t)\leftrightarrow \frac{1}{2\pi}F_1(\omega)*F_2(\omega)
-\end{align*}\]</span></p>
-<hr />
-<h2 id="时域抽样">时域抽样</h2>
-<p><span class="math display">\[\begin{align*}
-&amp; 若\quad f(t)\leftrightarrow F(\omega) \\
-&amp; 则\quad \sum_{n=-\infty}^{+\infty}f(t)\delta(t-nT_s)\leftrightarrow\frac{1}{T_s}\sum_{n=-\infty}^{+\infty}F(\omega-\frac{2n\pi}{T_s})
-\end{align*}\]</span></p>
-<hr />
-<h2 id="频域抽样">频域抽样</h2>
-<p><span class="math display">\[\begin{align*}
-&amp; 若\quad f(t)\leftrightarrow F(\omega) \\
-&amp; 则\quad \frac{1}{\omega_s}\sum_{n=-\infty}^{+\infty}f(t-\frac{2n\pi}{\omega_s})\leftrightarrow\sum_{n=-\infty}^{+\infty}F(\omega)\delta(\omega-n\omega_s)
-\end{align*}\]</span></p>
-<hr />
-
+        
+          <a class="article-more-a" href="/2021/07/19/%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E7%9A%84%E6%80%A7%E8%B4%A8/#more">more >></a>
+        
       
 
       
@@ -499,6 +475,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">信号与系统</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">傅里叶变换性质</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -555,7 +546,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="常用信号的傅里叶变换">常用信号的傅里叶变换</h1>
+        <span id="more"></span>
+<h1 id="常用信号的傅里叶变换">常用信号的傅里叶变换</h1>
 <table>
 <colgroup>
 <col style="width: 33%" />
@@ -660,6 +652,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">信号与系统</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">傅里叶变换</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -819,6 +826,26 @@ MathJax.Hub.Queue(function() {
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">信号与系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">傅里叶变换性质</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">傅里叶变换</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">拉普拉斯变换</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">拉普拉斯变换性质</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
