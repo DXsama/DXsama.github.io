@@ -152,6 +152,391 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-拉普拉斯变换的性质" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/07/19/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2%E7%9A%84%E6%80%A7%E8%B4%A8/">拉普拉斯变换的性质</a>
+    </h1>
+  
+
+        
+        <a href="/2021/07/19/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2%E7%9A%84%E6%80%A7%E8%B4%A8/" class="archive-article-date">
+  	<time datetime="2021-07-19T04:19:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="拉普拉斯变换的性质">拉普拉斯变换的性质</h1>
+<table>
+<thead>
+<tr class="header">
+<th>性质</th>
+<th>信号<span class="math inline">\(f(t)\)</span></th>
+<th>拉普拉斯变换<span class="math inline">\(F(s)\)</span></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math display">\[线性性质\]</span></td>
+<td><span class="math display">\[af_1(t)+bf_2(t)\]</span></td>
+<td><span class="math display">\[aF_1(s)+bF_2(s)\]</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[尺度变换\]</span></td>
+<td><span class="math display">\[f(at)\]</span></td>
+<td><span class="math display">\[\frac{1}{a}F(\frac{s}{a}),\quad a&gt;0\]</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[时域平移\]</span></td>
+<td><span class="math display">\[f(t\pm t_0)\]</span></td>
+<td><span class="math display">\[F(s)e^{\pm st_0}\]</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[s域平移\]</span></td>
+<td><span class="math display">\[f(t)e^{\mp\alpha t}\]</span></td>
+<td><span class="math display">\[F(s\pm\alpha)\]</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[时域微分\]</span></td>
+<td><span class="math display">\[\frac{d^nf(t)}{dt^n}\]</span></td>
+<td><span class="math display">\[s^nF(s)-\sum_{r=0}^{\infty}s^{n-r-1}f^{(r)}(0_-)\]</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[s域微分\]</span></td>
+<td><span class="math display">\[t^nf(t)\]</span></td>
+<td><span class="math display">\[(-1)^n\frac{d^nF(s)}{ds^n}\]</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[时域积分\]</span></td>
+<td><span class="math display">\[\int_{-\infty}^tf(\tau)d\tau\]</span></td>
+<td><span class="math display">\[\frac{F(s)}{s}+\frac{f^{(-1)}(0)}{s}\]</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[s域积分\]</span></td>
+<td><span class="math display">\[\frac{f(t)}{t}\]</span></td>
+<td><span class="math display">\[\int_s^\infty F(\lambda)d\lambda\]</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[时域卷积\]</span></td>
+<td><span class="math display">\[f_1(t)*f_2(t)\]</span></td>
+<td><span class="math display">\[F_1(s)F_2(s)\]</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[s域卷积\]</span></td>
+<td><span class="math display">\[f_1(t)\cdot f_2(t)\]</span></td>
+<td><span class="math display">\[\frac{1}{2\pi j}F_1(s)*F_2(s)\]</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><strong>初值定理：</strong> <span class="math inline">\(F(s)必须是真分式\)</span> <span class="math display">\[f(0_+)=\lim_{s\rightarrow\infty}sF(s)\]</span></p>
+<p><span class="math inline">\(若f(t)中包含k\delta(t)，此定理需要修改，\\ 此时\mathscr{L}[f(t)]=F(s)=k+F_1(s)，初值定理为：\)</span> <span class="math display">\[f(0_+)=\lim_{s\rightarrow\infty}sF_1(s)\]</span></p></li>
+<li><p><strong>终值定理：</strong> <span class="math inline">\(f(t)必须存在终值\)</span> <span class="math display">\[f(\infty)=\lim_{s\rightarrow0}sF(s)\]</span></p></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/07/19/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2%E7%9A%84%E6%80%A7%E8%B4%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-常用信号的拉氏变换" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/07/19/%E5%B8%B8%E7%94%A8%E4%BF%A1%E5%8F%B7%E7%9A%84%E6%8B%89%E6%B0%8F%E5%8F%98%E6%8D%A2/">常用信号的拉氏变换</a>
+    </h1>
+  
+
+        
+        <a href="/2021/07/19/%E5%B8%B8%E7%94%A8%E4%BF%A1%E5%8F%B7%E7%9A%84%E6%8B%89%E6%B0%8F%E5%8F%98%E6%8D%A2/" class="archive-article-date">
+  	<time datetime="2021-07-19T04:19:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="常用信号的拉式变换">常用信号的拉式变换</h1>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>信号<span class="math inline">\(f(t)\quad t&gt;0\)</span></th>
+<th>拉普拉斯变换<span class="math inline">\(F(s)\)</span></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math display">\[\delta(t)\]</span></td>
+<td><span class="math display">\[1\]</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[u(t)\]</span></td>
+<td><span class="math display">\[\frac{1}{s}\]</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[e^{-\alpha t}\]</span></td>
+<td><span class="math display">\[\frac{1}{\alpha+s}\]</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\left\{\begin{align*}&amp; e^{-\alpha t}\quad0&lt;t&lt;T \\ &amp; 0\qquad 其他\end{align*}\right.\]</span></td>
+<td><span class="math display">\[\frac{1}{\alpha+s}[1-e^{-(\alpha+s)T}]\]</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[t^n\]</span></td>
+<td><span class="math display">\[\frac{n!}{s^{n+1}}\]</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[sin(\omega_0t)\]</span></td>
+<td><span class="math display">\[\frac{\omega_0}{s^2+\omega_0^2}\]</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[cos(\omega_0t)\]</span></td>
+<td><span class="math display">\[\frac{s}{s^2+\omega_0^2}\]</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\delta_T(t)\]</span></td>
+<td><span class="math display">\[\frac{1}{1-e^{-sT}}\]</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/07/19/%E5%B8%B8%E7%94%A8%E4%BF%A1%E5%8F%B7%E7%9A%84%E6%8B%89%E6%B0%8F%E5%8F%98%E6%8D%A2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-傅里叶变换的性质" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/07/19/%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E7%9A%84%E6%80%A7%E8%B4%A8/">傅里叶变换的性质</a>
+    </h1>
+  
+
+        
+        <a href="/2021/07/19/%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E7%9A%84%E6%80%A7%E8%B4%A8/" class="archive-article-date">
+  	<time datetime="2021-07-19T04:16:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="傅里叶变换的性质">傅里叶变换的性质</h1>
+<h2 id="对称性质">对称性质</h2>
+<p><span class="math display">\[若f(t)\leftrightarrow F(\omega) \qquad 则F(t)\leftrightarrow2\pi f(-\omega)\]</span></p>
+<hr />
+<h2 id="线性性质">线性性质</h2>
+<p><span class="math display">\[若f_1(t)\leftrightarrow F_1(\omega)，f_2(t)\leftrightarrow F_2(\omega)\]</span></p>
+<p><span class="math display">\[则c_1f_1(t)+c_2f_2(t)\leftrightarrow c_1F_1(\omega)+c_2F_2(\omega)\]</span></p>
+<hr />
+<h2 id="奇偶虚实性">奇偶虚实性</h2>
+<p><span class="math display">\[若f(t)\leftrightarrow F(\omega) \qquad 则f(-t)\leftrightarrow F(-\omega)=F^*(\omega)\]</span></p>
+<hr />
+<h2 id="尺度变换性质">尺度变换性质</h2>
+<p><span class="math display">\[若f(t)\leftrightarrow F(\omega) \qquad 则f(at)\leftrightarrow \frac{1}{|a|}F(\frac{\omega}{a})\]</span></p>
+<hr />
+<h2 id="时移特性">时移特性</h2>
+<p><span class="math display">\[若f(t)\leftrightarrow F(\omega) \qquad 则f(t-t_0)\leftrightarrow F(\omega)e^{-j\omega t_0}\]</span></p>
+<hr />
+<h2 id="频移特性">频移特性</h2>
+<p><span class="math display">\[若f(t)\leftrightarrow F(\omega) \qquad 则f(t)e^{\pm j\omega_0t}\leftrightarrow F(\omega\mp\omega_0)\]</span></p>
+<hr />
+<h2 id="时移加尺度变换">时移加尺度变换</h2>
+<p><span class="math display">\[若f(t)\leftrightarrow F(\omega) \qquad 则f(at+b)\leftrightarrow \frac{1}{|a|}F(\frac{\omega}{a})e^{j\omega\frac{b}{a}}\]</span></p>
+<hr />
+<h2 id="时域微分特性">时域微分特性</h2>
+<p><span class="math display">\[若f(t)\leftrightarrow F(\omega) \qquad 则f&#39;(t)\leftrightarrow j\omega F(\omega)\]</span></p>
+<p><span class="math display">\[f^{(n)}(t)\leftrightarrow(j\omega)^nF(\omega)\]</span></p>
+<p><font color="red"><span class="math inline">\(注意：如果f(t)中有直流分量，应先取出直流分量，单独求傅里叶变换，余下部分再用微分性质\)</span></font></p>
+<p><strong>意义：<span class="math inline">\(F(\omega)\)</span>幅度乘<span class="math inline">\(\omega\)</span>，相位增加<span class="math inline">\(90\degree\)</span></strong></p>
+<hr />
+<h2 id="时域积分特性">时域积分特性</h2>
+<p><span class="math display">\[\begin{align*}
+&amp; 若f(t)\leftrightarrow F(\omega),则：\\
+&amp; F(0)=0时，\int_{-\infty}^tf(\tau)d\tau\leftrightarrow\frac{F(\omega)}{j\omega} \\
+&amp; F(0)\neq0时，\int_{-\infty}^tf(\tau)d\tau\leftrightarrow F(\omega)\left[\frac{1}{j\omega}+\pi\delta(\omega)\right]=\pi F(0)\delta(\omega)+\frac{F(\omega)}{j\omega}
+\end{align*}\]</span></p>
+<hr />
+<h2 id="频域微分特性">频域微分特性</h2>
+<p><span class="math display">\[若f(t)\leftrightarrow F(\omega) \qquad 则tf(t)\leftrightarrow j\frac{dF(\omega)}{d\omega}\]</span></p>
+<p><span class="math display">\[-jtf(t)\leftrightarrow\frac{dF(\omega)}{d\omega}\]</span></p>
+<p><span class="math display">\[(-jt)^nf(t)\leftrightarrow\frac{d^nF(\omega)}{d\omega^n}\]</span></p>
+<p><span class="math display">\[t^nf(t)\leftrightarrow j^n\frac{d^nF(\omega)}{d\omega^n}\]</span></p>
+<hr />
+<h2 id="频域积分特性">频域积分特性</h2>
+<p><span class="math display">\[若f(t)\leftrightarrow F(\omega) \qquad 则-\frac{f(t)}{jt}+\pi f(0)\delta(t)\leftrightarrow \int_{-\infty}^\omega F(\Omega)d\Omega\]</span></p>
+<hr />
+<h2 id="卷积定理"><font color="blue">卷积定理</font></h2>
+<p><span class="math display">\[\begin{align*}
+&amp; 若\quad f_1(t)\leftrightarrow F_1(\omega) \quad f_2(t)\leftrightarrow F_2(\omega) \\
+&amp; 则\quad f_1(t)*f_2(t)\leftrightarrow F_1(\omega)F_2(\omega) \\
+&amp; 则\quad f_1(t)f_2(t)\leftrightarrow \frac{1}{2\pi}F_1(\omega)*F_2(\omega)
+\end{align*}\]</span></p>
+<hr />
+<h2 id="时域抽样">时域抽样</h2>
+<p><span class="math display">\[\begin{align*}
+&amp; 若\quad f(t)\leftrightarrow F(\omega) \\
+&amp; 则\quad \sum_{n=-\infty}^{+\infty}f(t)\delta(t-nT_s)\leftrightarrow\frac{1}{T_s}\sum_{n=-\infty}^{+\infty}F(\omega-\frac{2n\pi}{T_s})
+\end{align*}\]</span></p>
+<hr />
+<h2 id="频域抽样">频域抽样</h2>
+<p><span class="math display">\[\begin{align*}
+&amp; 若\quad f(t)\leftrightarrow F(\omega) \\
+&amp; 则\quad \frac{1}{\omega_s}\sum_{n=-\infty}^{+\infty}f(t-\frac{2n\pi}{\omega_s})\leftrightarrow\sum_{n=-\infty}^{+\infty}F(\omega)\delta(\omega-n\omega_s)
+\end{align*}\]</span></p>
+<hr />
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/07/19/%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E7%9A%84%E6%80%A7%E8%B4%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-常用信号的傅里叶变换" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
