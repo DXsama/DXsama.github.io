@@ -167,86 +167,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <span id="more"></span>
-<h1 id="拉普拉斯变换的性质">拉普拉斯变换的性质</h1>
-<table>
-<thead>
-<tr class="header">
-<th>性质</th>
-<th>信号<span class="math inline">\(f(t)\)</span></th>
-<th>拉普拉斯变换<span class="math inline">\(F(s)\)</span></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math display">\[线性性质\]</span></td>
-<td><span class="math display">\[af_1(t)+bf_2(t)\]</span></td>
-<td><span class="math display">\[aF_1(s)+bF_2(s)\]</span></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><span class="math display">\[尺度变换\]</span></td>
-<td><span class="math display">\[f(at)\]</span></td>
-<td><span class="math display">\[\frac{1}{a}F(\frac{s}{a}),\quad a&gt;0\]</span></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><span class="math display">\[时域平移\]</span></td>
-<td><span class="math display">\[f(t\pm t_0)\]</span></td>
-<td><span class="math display">\[F(s)e^{\pm st_0}\]</span></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><span class="math display">\[s域平移\]</span></td>
-<td><span class="math display">\[f(t)e^{\mp\alpha t}\]</span></td>
-<td><span class="math display">\[F(s\pm\alpha)\]</span></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><span class="math display">\[时域微分\]</span></td>
-<td><span class="math display">\[\frac{d^nf(t)}{dt^n}\]</span></td>
-<td><span class="math display">\[s^nF(s)-\sum_{r=0}^{\infty}s^{n-r-1}f^{(r)}(0_-)\]</span></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><span class="math display">\[s域微分\]</span></td>
-<td><span class="math display">\[t^nf(t)\]</span></td>
-<td><span class="math display">\[(-1)^n\frac{d^nF(s)}{ds^n}\]</span></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><span class="math display">\[时域积分\]</span></td>
-<td><span class="math display">\[\int_{-\infty}^tf(\tau)d\tau\]</span></td>
-<td><span class="math display">\[\frac{F(s)}{s}+\frac{f^{(-1)}(0)}{s}\]</span></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><span class="math display">\[s域积分\]</span></td>
-<td><span class="math display">\[\frac{f(t)}{t}\]</span></td>
-<td><span class="math display">\[\int_s^\infty F(\lambda)d\lambda\]</span></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><span class="math display">\[时域卷积\]</span></td>
-<td><span class="math display">\[f_1(t)*f_2(t)\]</span></td>
-<td><span class="math display">\[F_1(s)F_2(s)\]</span></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><span class="math display">\[s域卷积\]</span></td>
-<td><span class="math display">\[f_1(t)\cdot f_2(t)\]</span></td>
-<td><span class="math display">\[\frac{1}{2\pi j}F_1(s)*F_2(s)\]</span></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><p><strong>初值定理：</strong> <span class="math inline">\(F(s)必须是真分式\)</span> <span class="math display">\[f(0_+)=\lim_{s\rightarrow\infty}sF(s)\]</span></p>
-<p><span class="math inline">\(若f(t)中包含k\delta(t)，此定理需要修改，\\ 此时\mathscr{L}[f(t)]=F(s)=k+F_1(s)，初值定理为：\)</span> <span class="math display">\[f(0_+)=\lim_{s\rightarrow\infty}sF_1(s)\]</span></p></li>
-<li><p><strong>终值定理：</strong> <span class="math inline">\(f(t)必须存在终值\)</span> <span class="math display">\[f(\infty)=\lim_{s\rightarrow0}sF(s)\]</span></p></li>
-</ul>
-
+        <h1 id="拉普拉斯变换的性质">拉普拉斯变换的性质</h1>
+<p><br>
+        
+          <a class="article-more-a" href="/2021/07/19/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2%E7%9A%84%E6%80%A7%E8%B4%A8/#more">more >></a>
+        
       
 
       
@@ -326,63 +251,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="常用信号的拉式变换">常用信号的拉式变换</h1>
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><span class="math display">\[信号f(t)\quad t&gt;0\]</span></th>
-<th><span class="math display">\[拉普拉斯变换F(s)\]</span></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math display">\[\delta(t)\]</span></td>
-<td><span class="math display">\[1\]</span></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><span class="math display">\[u(t)\]</span></td>
-<td><span class="math display">\[\frac{1}{s}\]</span></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><span class="math display">\[e^{-\alpha t}\]</span></td>
-<td><span class="math display">\[\frac{1}{\alpha+s}\]</span></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><span class="math display">\[\left\{\begin{align*}&amp; e^{-\alpha t}\quad0&lt;t&lt;T \\ &amp; 0\qquad 其他\end{align*}\right.\]</span></td>
-<td><span class="math display">\[\frac{1}{\alpha+s}[1-e^{-(\alpha+s)T}]\]</span></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><span class="math display">\[t^n\]</span></td>
-<td><span class="math display">\[\frac{n!}{s^{n+1}}\]</span></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><span class="math display">\[sin(\omega_0t)\]</span></td>
-<td><span class="math display">\[\frac{\omega_0}{s^2+\omega_0^2}\]</span></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><span class="math display">\[cos(\omega_0t)\]</span></td>
-<td><span class="math display">\[\frac{s}{s^2+\omega_0^2}\]</span></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><span class="math display">\[\delta_T(t)\]</span></td>
-<td><span class="math display">\[\frac{1}{1-e^{-sT}}\]</span></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
+<p><br>
+        
+          <a class="article-more-a" href="/2021/07/19/%E5%B8%B8%E7%94%A8%E4%BF%A1%E5%8F%B7%E7%9A%84%E6%8B%89%E6%B0%8F%E5%8F%98%E6%8D%A2/#more">more >></a>
+        
       
 
       
@@ -462,9 +334,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="傅里叶变换的性质">傅里叶变换的性质</h1>
-<h2 id="对称性质">对称性质</h2>
-<p><span class="math display">\[若f(t)\leftrightarrow F(\omega) \qquad 则F(t)\leftrightarrow2\pi f(-\omega)\]</span></p>
-<hr />
+<p><br>
         
           <a class="article-more-a" href="/2021/07/19/%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E7%9A%84%E6%80%A7%E8%B4%A8/#more">more >></a>
         
@@ -546,105 +416,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <span id="more"></span>
-<h1 id="常用信号的傅里叶变换">常用信号的傅里叶变换</h1>
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>信号<span class="math inline">\(f(t)\)</span></th>
-<th>傅里叶变换<span class="math inline">\(F(\omega)\)</span></th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math display">\[\delta(t)\]</span></td>
-<td><span class="math display">\[1\]</span></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><span class="math display">\[u(t)\]</span></td>
-<td><span class="math display">\[\pi\delta(\omega)+\frac{1}{j\omega}\]</span></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><span class="math display">\[1\]</span></td>
-<td><span class="math display">\[2\pi\delta(\omega)\]</span></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><span class="math display">\[EG_\tau(t)\]</span></td>
-<td><span class="math display">\[E\tau Sa(\frac{\omega\tau}{2})\]</span></td>
-<td><span class="math display">\[-\frac{\tau}{2}到\frac{\tau}{2},高度为E的门函数\]</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math display">\[cos(\omega_1\tau)\]</span></td>
-<td><span class="math display">\[\pi[\delta(\omega+\omega_1)+\delta(\omega-\omega_1)]\]</span></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><span class="math display">\[sin(\omega_1\tau)\]</span></td>
-<td><span class="math display">\[j\pi[\delta(\omega+\omega_1)-\delta(\omega-\omega_1)]\]</span></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><span class="math display">\[e^{-at}u(t)\]</span></td>
-<td><span class="math display">\[\frac{1}{a+j\omega}\]</span></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><span class="math display">\[E(1-\frac{2\vert t\vert}{\tau})G_\tau(t)\]</span></td>
-<td><span class="math display">\[\frac{E\tau}{2}Sa^2(\frac{\omega\tau}{4})\]</span></td>
-<td><span class="math display">\[-\frac{\tau}{2}到\frac{\tau}{2},高度为E的三角波\]</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math display">\[sgn(t)\]</span></td>
-<td><span class="math display">\[\frac{2}{j\omega}\]</span></td>
-<td><span class="math display">\[sgn(t)为符号函数\]</span></td>
-</tr>
-<tr class="even">
-<td><span class="math display">\[\frac{E}{2}\left[1+cos(\frac{2\pi t}{\tau})\right]G_\tau(t)\]</span></td>
-<td><span class="math display">\[\frac{E\tau}{2}\frac{Sa(\frac{\omega\tau}{2})}{1-\left(\frac{\omega\tau}{2\pi}\right)^2}\]</span></td>
-<td><span class="math display">\[-\frac{\tau}{2}到\frac{\tau}{2},高度为E的升余弦信号\]</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math display">\[Ecos(\frac{\pi t}{\tau})G_\tau(t)\]</span></td>
-<td><span class="math display">\[\frac{2E\tau}{\pi}\frac{cos(\frac{\omega\tau}{2})}{1-(\frac{\omega\tau}{\pi})^2}\]</span></td>
-<td><span class="math display">\[-\frac{\tau}{2}到\frac{\tau}{2},高度为E的余弦信号\]</span></td>
-</tr>
-<tr class="even">
-<td><span class="math display">\[\left\{\begin{align*}&amp; \frac{2E}{\tau-\tau_1}(t+\frac{\tau}{2}) \quad (-\frac{\tau}{2}&lt;t&lt;-\frac{\tau_1}{2})\\&amp; E\qquad\qquad\qquad(-\frac{\tau_1}{2}&lt;t&lt;\frac{\tau_1}{2})\\&amp; \frac{2E}{\tau-\tau_1}(\frac{\tau}{2}-t) \quad (\frac{\tau_1}{2}&lt;t&lt;\frac{\tau}{2})\\&amp; 0\qquad\qquad\qquad(其他)\end{align*}\right.\]</span></td>
-<td><span class="math display">\[\frac{8E}{(\tau-\tau_1)\omega^2}sin\left[\frac{\omega(\tau+\tau_1)}{4}\right]sin\left[\frac{\omega(\tau-\tau_1)}{4}\right]\]</span></td>
-<td><span class="math display">\[梯形信号\]</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math display">\[\delta_T(t)\]</span></td>
-<td><span class="math display">\[\omega_1\sum_{n=-\infty}^{\infty}\delta(\omega-n\omega_1)\\ (\omega_1=\frac{2\pi}{T})\]</span></td>
-<td><span class="math display">\[冲击序列:\\ \delta_T(t)=\sum_{n=-\infty}^{\infty}\delta(t-nT)\]</span></td>
-</tr>
-<tr class="even">
-<td><span class="math display">\[e^{-at}sin(\omega_0t)u(t)\\ (a&gt;0)\]</span></td>
-<td><span class="math display">\[\frac{\omega_0}{(a+j\omega)^2+\omega_0^2}\]</span></td>
-<td><span class="math display">\[单边衰减正弦信号\]</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math display">\[e^{-at}cos(\omega_0t)u(t)\\ (a&gt;0)\]</span></td>
-<td><span class="math display">\[\frac{a+j\omega}{(a+j\omega)^2+\omega_0^2}\]</span></td>
-<td><span class="math display">\[单边衰减正弦信号\]</span></td>
-</tr>
-<tr class="even">
-<td><span class="math display">\[Ee^{-(\frac{t}{\tau})^2}\]</span></td>
-<td><span class="math display">\[\sqrt\pi E\tau e^{-(\frac{\omega\tau}{2})^2}\]</span></td>
-<td><span class="math display">\[钟型脉冲\]</span></td>
-</tr>
-</tbody>
-</table>
-
+        <h1 id="常用信号的傅里叶变换">常用信号的傅里叶变换</h1>
+<p><br>
+        
+          <a class="article-more-a" href="/2021/07/19/%E5%B8%B8%E7%94%A8%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/#more">more >></a>
+        
       
 
       
