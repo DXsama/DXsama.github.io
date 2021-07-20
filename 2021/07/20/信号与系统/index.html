@@ -30,7 +30,7 @@
 <meta property="og:description" content="介绍了信号的分类、典型信号、信号的运算、信号的分解、系统的分类">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-07-20T03:30:58.000Z">
-<meta property="article:modified_time" content="2021-07-20T03:45:52.186Z">
+<meta property="article:modified_time" content="2021-07-20T07:20:08.158Z">
 <meta property="article:author" content="dxsama">
 <meta property="article:tag" content="信号与系统">
 <meta name="twitter:card" content="summary">
@@ -208,7 +208,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-07-20 11:30:58 / 修改时间：11:45:52" itemprop="dateCreated datePublished" datetime="2021-07-20T11:30:58+08:00">2021-07-20</time>
+              <time title="创建时间：2021-07-20 11:30:58 / 修改时间：15:20:08" itemprop="dateCreated datePublished" datetime="2021-07-20T11:30:58+08:00">2021-07-20</time>
             </span>
 
           
@@ -267,9 +267,16 @@
 <hr />
 <h2 id="信号的运算">信号的运算</h2>
 <ul>
-<li><strong>移位、反褶、尺度变换</strong> 移位：<span class="math inline">\(f(t)\rightarrow f(t\pm t_0)\)</span>，左加右减 反褶：<span class="math inline">\(f(t)\rightarrow f(-t)\)</span> 尺度变换：<span class="math inline">\(f(t)\rightarrow f(at)\)</span></li>
-<li><p><strong>微分、积分</strong> <font color=red>注意：跳变点微分之后会出现冲击，微分和积分不具有可逆性。</font> <span class="math display">\[\frac{d}{dt}\left[\int_{-\infty}^tf(\tau)d\tau\right]=f(t) \quad \int_{-\infty}^t\left[\frac{d}{d\tau}f(\tau)\right]d\tau\neq f(t)\]</span></p></li>
-<li><p><strong>相乘、相加</strong> <font color=red>注意：信号相乘或相加就是对应点相乘或相加。</font></p></li>
+<li><strong>移位、反褶、尺度变换</strong><br />
+移位：<span class="math inline">\(f(t)\rightarrow f(t\pm t_0)\)</span>，左加右减<br />
+反褶：<span class="math inline">\(f(t)\rightarrow f(-t)\)</span><br />
+尺度变换：<span class="math inline">\(f(t)\rightarrow f(at)\)</span><br />
+</li>
+<li><p><strong>微分、积分</strong><br />
+<font color=red>注意：跳变点微分之后会出现冲击，微分和积分不具有可逆性。</font><br />
+<span class="math display">\[\frac{d}{dt}\left[\int_{-\infty}^tf(\tau)d\tau\right]=f(t) \quad \int_{-\infty}^t\left[\frac{d}{d\tau}f(\tau)\right]d\tau\neq f(t)\]</span></p></li>
+<li><p><strong>相乘、相加</strong><br />
+<font color=red>注意：信号相乘或相加就是对应点相乘或相加。</font></p></li>
 </ul>
 <hr />
 <h2 id="信号的分解">信号的分解</h2>
@@ -311,13 +318,26 @@
 </ul>
 <h2 id="线性时不变系统">线性时不变系统</h2>
 <h3 id="叠加性与均匀性">叠加性与均匀性</h3>
-<p><strong>规则：线系统后叠加 <span class="math inline">\(\substack{?\\=}\)</span> 先叠加后系统</strong> 系统模型：<span class="math inline">\(r(t)=f[e(t)]\)</span> 先系统后叠加：<span class="math inline">\(a_1f[e_1(t)]+a_2f[e_2(t)]\)</span> 先叠加后系统：<span class="math inline">\(f[a_1e_1(t)+a_2e_2(t)]\)</span> 判断：<span class="math inline">\(f[a_1e_1(t)+a_2e_2(t)]\substack{?\\=}a_1f[e_1(t)]+a_2f[e_2(t)]\)</span> 典型非线性系统：<span class="math inline">\(r(t)=e^2(t) \qquad r(t)=e(t)+A\)</span></p>
+<p><strong>规则：线系统后叠加 <span class="math inline">\(\substack{?\\=}\)</span> 先叠加后系统</strong><br />
+系统模型：<span class="math inline">\(r(t)=f[e(t)]\)</span><br />
+先系统后叠加：<span class="math inline">\(a_1f[e_1(t)]+a_2f[e_2(t)]\)</span><br />
+先叠加后系统：<span class="math inline">\(f[a_1e_1(t)+a_2e_2(t)]\)</span><br />
+判断：<span class="math inline">\(f[a_1e_1(t)+a_2e_2(t)]\substack{?\\=}a_1f[e_1(t)]+a_2f[e_2(t)]\)</span><br />
+典型非线性系统：<span class="math inline">\(r(t)=e^2(t) \qquad r(t)=e(t)+A\)</span></p>
 <h3 id="时不变特性">时不变特性</h3>
-<p><strong>规则：线系统后延时 <span class="math inline">\(\substack{?\\=}\)</span> 先延时后系统</strong> 系统模型：<span class="math inline">\(r(t)=f[e(t)]\)</span> 先系统后延时：<span class="math inline">\(r(t-t_0)\)</span> 先延时后系统：<span class="math inline">\(f[e(t-t_0)]\)</span> 判断：<span class="math inline">\(r(t-t_0)\substack{?\\=}f[e(t-t_0)]\)</span> 典型时变系统：<span class="math inline">\(r(t)=te(t) \quad r(t)=t+e(t) \quad r(t)=e(at),a\neq1\)</span></p>
+<p><strong>规则：线系统后延时 <span class="math inline">\(\substack{?\\=}\)</span> 先延时后系统</strong><br />
+系统模型：<span class="math inline">\(r(t)=f[e(t)]\)</span><br />
+先系统后延时：<span class="math inline">\(r(t-t_0)\)</span><br />
+先延时后系统：<span class="math inline">\(f[e(t-t_0)]\)</span><br />
+判断：<span class="math inline">\(r(t-t_0)\substack{?\\=}f[e(t-t_0)]\)</span><br />
+典型时变系统：<span class="math inline">\(r(t)=te(t) \quad r(t)=t+e(t) \quad r(t)=e(at),a\neq1\)</span></p>
 <h3 id="因果性">因果性</h3>
-<p><strong>规则：输出与未来的输入值无关</strong> 典型非因果系统：<span class="math inline">\(r(t)=e(-t) \qquad r(t)=e(2t)\)</span> <font color=red>注意：<span class="math inline">\(r(t)=cos(t+5)e(t)\)</span>为因果</font></p>
+<p><strong>规则：输出与未来的输入值无关</strong><br />
+典型非因果系统：<span class="math inline">\(r(t)=e(-t) \qquad r(t)=e(2t)\)</span><br />
+<font color=red>注意：<span class="math inline">\(r(t)=cos(t+5)e(t)\)</span>为因果</font></p>
 <h3 id="即时性动态性">即时性（动态性）</h3>
-<p><strong>规则：当前输出仅仅与当前输入有关</strong> 典型动态系统：微积分系统，非因果系统</p>
+<p><strong>规则：当前输出仅仅与当前输入有关</strong><br />
+典型动态系统：微积分系统，非因果系统</p>
 <h3 id="微分特性">微分特性</h3>
 <p><strong>规则：输入微分则输出也微分</strong></p>
 <h3 id="可逆系统">可逆系统</h3>
