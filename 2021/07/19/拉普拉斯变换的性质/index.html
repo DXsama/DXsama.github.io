@@ -223,85 +223,85 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="拉普拉斯变换的性质">拉普拉斯变换的性质</h1>
-<p><br> <span id="more"></span></p>
+        <h1 id="拉普拉斯变换的性质"><a class="markdownIt-Anchor" href="#拉普拉斯变换的性质"></a> 拉普拉斯变换的性质</h1>
+<br>
+<span id="more"></span>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>性质</th>
-<th>信号<span class="math inline">\(f(t)\)</span></th>
-<th>拉普拉斯变换<span class="math inline">\(F(s)\)</span></th>
-<th></th>
+<th>信号<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(t)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">t</span><span class="mclose">)</span></span></span></span></th>
+<th>拉普拉斯变换<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F(s)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mopen">(</span><span class="mord mathdefault">s</span><span class="mclose">)</span></span></span></span></th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td><span class="math display">\[线性性质\]</span></td>
-<td><span class="math display">\[af_1(t)+bf_2(t)\]</span></td>
-<td><span class="math display">\[aF_1(s)+bF_2(s)\]</span></td>
-<td></td>
+<tr>
+<td>$$线性性质$$</td>
+<td>$$af_1(t)+bf_2(t)$$</td>
+<td>$$aF_1(s)+bF_2(s)$$</td>
 </tr>
-<tr class="even">
-<td><span class="math display">\[尺度变换\]</span></td>
-<td><span class="math display">\[f(at)\]</span></td>
-<td><span class="math display">\[\frac{1}{a}F(\frac{s}{a}),\quad a&gt;0\]</span></td>
-<td></td>
+<tr>
+<td>$$尺度变换$$</td>
+<td>$$f(at)$$</td>
+<td>$$\frac{1}{a}F(\frac{s}{a}),\quad a&gt;0$$</td>
 </tr>
-<tr class="odd">
-<td><span class="math display">\[时域平移\]</span></td>
-<td><span class="math display">\[f(t\pm t_0)\]</span></td>
-<td><span class="math display">\[F(s)e^{\pm st_0}\]</span></td>
-<td></td>
+<tr>
+<td>$$时域平移$$</td>
+<td>$$f(t\pm t_0)$$</td>
+<td>$$F(s)e^{\pm st_0}$$</td>
 </tr>
-<tr class="even">
-<td><span class="math display">\[s域平移\]</span></td>
-<td><span class="math display">\[f(t)e^{\mp\alpha t}\]</span></td>
-<td><span class="math display">\[F(s\pm\alpha)\]</span></td>
-<td></td>
+<tr>
+<td>$$s域平移$$</td>
+<td>$$f(t)e^{\mp\alpha t}$$</td>
+<td>$$F(s\pm\alpha)$$</td>
 </tr>
-<tr class="odd">
-<td><span class="math display">\[时域微分\]</span></td>
-<td><span class="math display">\[\frac{d^nf(t)}{dt^n}\]</span></td>
-<td><span class="math display">\[s^nF(s)-\sum_{r=0}^{\infty}s^{n-r-1}f^{(r)}(0_-)\]</span></td>
-<td></td>
+<tr>
+<td>$$时域微分$$</td>
+<td>$$\frac{d<sup>nf(t)}{dt</sup>n}$$</td>
+<td>$$s<sup>nF(s)-\sum_{r=0}</sup>{\infty}s<sup>{n-r-1}f</sup>{(r)}(0_-)$$</td>
 </tr>
-<tr class="even">
-<td><span class="math display">\[s域微分\]</span></td>
-<td><span class="math display">\[t^nf(t)\]</span></td>
-<td><span class="math display">\[(-1)^n\frac{d^nF(s)}{ds^n}\]</span></td>
-<td></td>
+<tr>
+<td>$$s域微分$$</td>
+<td>$$t^nf(t)$$</td>
+<td>$$(-1)<sup>n\frac{d</sup>nF(s)}{ds^n}$$</td>
 </tr>
-<tr class="odd">
-<td><span class="math display">\[时域积分\]</span></td>
-<td><span class="math display">\[\int_{-\infty}^tf(\tau)d\tau\]</span></td>
-<td><span class="math display">\[\frac{F(s)}{s}+\frac{f^{(-1)}(0)}{s}\]</span></td>
-<td></td>
+<tr>
+<td>$$时域积分$$</td>
+<td>$$\int_{-\infty}^tf(\tau)d\tau$$</td>
+<td>$$\frac{F(s)}{s}+\frac{f^{(-1)}(0)}{s}$$</td>
 </tr>
-<tr class="even">
-<td><span class="math display">\[s域积分\]</span></td>
-<td><span class="math display">\[\frac{f(t)}{t}\]</span></td>
-<td><span class="math display">\[\int_s^\infty F(\lambda)d\lambda\]</span></td>
-<td></td>
+<tr>
+<td>$$s域积分$$</td>
+<td>$$\frac{f(t)}{t}$$</td>
+<td>$$\int_s^\infty F(\lambda)d\lambda$$</td>
 </tr>
-<tr class="odd">
-<td><span class="math display">\[时域卷积\]</span></td>
-<td><span class="math display">\[f_1(t)*f_2(t)\]</span></td>
-<td><span class="math display">\[F_1(s)F_2(s)\]</span></td>
-<td></td>
+<tr>
+<td>$$时域卷积$$</td>
+<td>$$f_1(t)*f_2(t)$$</td>
+<td>$$F_1(s)F_2(s)$$</td>
 </tr>
-<tr class="even">
-<td><span class="math display">\[s域卷积\]</span></td>
-<td><span class="math display">\[f_1(t)\cdot f_2(t)\]</span></td>
-<td><span class="math display">\[\frac{1}{2\pi j}F_1(s)*F_2(s)\]</span></td>
-<td></td>
+<tr>
+<td>$$s域卷积$$</td>
+<td>$$f_1(t)\cdot f_2(t)$$</td>
+<td>$$\frac{1}{2\pi j}F_1(s)*F_2(s)$$</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li><p><strong>初值定理：</strong> <span class="math inline">\(F(s)必须是真分式\)</span> <span class="math display">\[f(0_+)=\lim_{s\rightarrow\infty}sF(s)\]</span></p>
-<p><span class="math inline">\(若f(t)中包含k\delta(t)，此定理需要修改，\\ 此时\mathscr{L}[f(t)]=F(s)=k+F_1(s)，初值定理为：\)</span> <span class="math display">\[f(0_+)=\lim_{s\rightarrow\infty}sF_1(s)\]</span></p></li>
-<li><p><strong>终值定理：</strong> <span class="math inline">\(f(t)必须存在终值\)</span> <span class="math display">\[f(\infty)=\lim_{s\rightarrow0}sF(s)\]</span></p></li>
+<li><strong>初值定理：</strong>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo><mi mathvariant="normal">必</mi><mi mathvariant="normal">须</mi><mi mathvariant="normal">是</mi><mi mathvariant="normal">真</mi><mi mathvariant="normal">分</mi><mi mathvariant="normal">式</mi></mrow><annotation encoding="application/x-tex">F(s)必须是真分式</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mopen">(</span><span class="mord mathdefault">s</span><span class="mclose">)</span><span class="mord cjk_fallback">必</span><span class="mord cjk_fallback">须</span><span class="mord cjk_fallback">是</span><span class="mord cjk_fallback">真</span><span class="mord cjk_fallback">分</span><span class="mord cjk_fallback">式</span></span></span></span></li>
 </ul>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><msub><mn>0</mn><mo>+</mo></msub><mo stretchy="false">)</mo><mo>=</mo><munder><mo><mi>lim</mi><mo>⁡</mo></mo><mrow><mi>s</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow></munder><mi>s</mi><mi>F</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(0_+)=\lim_{s\rightarrow\infty}sF(s)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.25833100000000003em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.45em;vertical-align:-0.7em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-2.1em;margin-left:0em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">s</span><span class="mrel mtight">→</span><span class="mord mtight">∞</span></span></span></span><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span><span class="mop">lim</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.7em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">s</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mopen">(</span><span class="mord mathdefault">s</span><span class="mclose">)</span></span></span></span></span></p>
+<pre><code>$若f(t)中包含k\delta(t)，此定理需要修改，\\ 此时\mathscr&#123;L&#125;[f(t)]=F(s)=k+F_1(s)，初值定理为：$
+$$f(0_+)=\lim_&#123;s\rightarrow\infty&#125;sF_1(s)$$
+</code></pre>
+<ul>
+<li><strong>终值定理：</strong>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mi mathvariant="normal">必</mi><mi mathvariant="normal">须</mi><mi mathvariant="normal">存</mi><mi mathvariant="normal">在</mi><mi mathvariant="normal">终</mi><mi mathvariant="normal">值</mi></mrow><annotation encoding="application/x-tex">f(t)必须存在终值</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">t</span><span class="mclose">)</span><span class="mord cjk_fallback">必</span><span class="mord cjk_fallback">须</span><span class="mord cjk_fallback">存</span><span class="mord cjk_fallback">在</span><span class="mord cjk_fallback">终</span><span class="mord cjk_fallback">值</span></span></span></span></li>
+</ul>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo><mo>=</mo><munder><mo><mi>lim</mi><mo>⁡</mo></mo><mrow><mi>s</mi><mo>→</mo><mn>0</mn></mrow></munder><mi>s</mi><mi>F</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(\infty)=\lim_{s\rightarrow0}sF(s)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord">∞</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.467108em;vertical-align:-0.717108em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-2.082892em;margin-left:0em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">s</span><span class="mrel mtight">→</span><span class="mord mtight">0</span></span></span></span><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span><span class="mop">lim</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.717108em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">s</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mopen">(</span><span class="mord mathdefault">s</span><span class="mclose">)</span></span></span></span></span></p>
 
     </div>
 
@@ -386,7 +386,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.</span> <span class="nav-text">拉普拉斯变换的性质</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.</span> <span class="nav-text"> 拉普拉斯变换的性质</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
