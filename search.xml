@@ -1,10 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>傅里叶变换的性质</title>
-    <url>/2021/07/19/%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E7%9A%84%E6%80%A7%E8%B4%A8/</url>
-    <content><![CDATA[<h1 id="傅里叶变换的性质">傅里叶变换的性质</h1>
-<p><br> <span id="more"></span></p>
+    <title>信号与系统</title>
+    <url>/2021/07/20/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p><strong>介绍了信号的分类、典型信号、信号的运算、信号的分解、系统的分类</strong></p>
+<span id="more"></span>
+<h1 id="信号">信号</h1>
+<hr />
+<h2 id="信号的分类">信号的分类</h2>
+<ul>
+<li><strong>连续信号和离散信号</strong></li>
+<li><strong>周期信号和非周期信号：</strong> 周期信号不一定有最小周期，例如：<span class="math inline">\(f(t)=A\)</span></li>
+<li><strong>能量信号和功率信号：</strong> 一个信号如果不是能量信号可能是功率信号，但是如果一个信号既不是能量信号也不是功率信号那么这个信号是<strong>功率无限信号</strong> 例如：<span class="math inline">\(f(t)=e^t\)</span></li>
+<li><strong>确定信号和随机信号：</strong> 确定信号：能给出确定的<span class="math inline">\(f(t)\)</span>的表达式 随机信号：只能知道信号可能的取值，具体的取值不确定</li>
+</ul>
+<hr />
+<h2 id="典型的信号">典型的信号</h2>
+<ul>
+<li><strong>指数信号：</strong> <span class="math display">\[f(t)=Ke^{-at}\quad t&gt;0\]</span></li>
+<li><strong>正弦信号：</strong> <span class="math display">\[f(t)=Ksin(\omega t+\theta)\]</span></li>
+<li><strong>复指数信号：</strong> <span class="math display">\[f(t)=Ke^{(\sigma+j\omega)t}=Ke^{\sigma t}cos(\omega t)+jKe^{\sigma t}sin(\omega t)\]</span></li>
+<li><strong>抽样信号：</strong> <span class="math display">\[Sa(t)=\frac{sin(t)}{t}\]</span></li>
+</ul>
+<p><span class="math display">\[\int_{-\infty}^{+\infty}Sa(t)dt=\pi\]</span></p>
+<p><span class="math display">\[sinc(t)=Sa(\pi t)=\frac{sin(\pi t)}{\pi t}\]</span></p>
+<hr />
+<h2 id="信号的运算">信号的运算</h2>
+<ul>
+<li><strong>移位、反褶、尺度变换</strong> 移位：<span class="math inline">\(f(t)\rightarrow f(t\pm t_0)\)</span>，左加右减 反褶：<span class="math inline">\(f(t)\rightarrow f(-t)\)</span> 尺度变换：<span class="math inline">\(f(t)\rightarrow f(at)\)</span></li>
+<li><p><strong>微分、积分</strong> <font color=red>注意：跳变点微分之后会出现冲击，微分和积分不具有可逆性。</font> <span class="math display">\[\frac{d}{dt}\left[\int_{-\infty}^tf(\tau)d\tau\right]=f(t) \quad \int_{-\infty}^t\left[\frac{d}{d\tau}f(\tau)\right]d\tau\neq f(t)\]</span></p></li>
+<li><p><strong>相乘、相加</strong> <font color=red>注意：信号相乘或相加就是对应点相乘或相加。</font></p></li>
+</ul>
+<hr />
+<h2 id="信号的分解">信号的分解</h2>
+<ul>
+<li><p><strong>直流分量和交流分量</strong> <span class="math display">\[f(t)=f_D+f_A(t)\]</span></p>
+<p><span class="math display">\[f_D=\lim_{T\rightarrow\infty}\frac{1}{T}\int_{-T/2}^{T/2}f(t)dt \qquad \int_{-\infty}^{+\infty}f_A(t)dt=0\]</span></p>
+<p><span class="math display">\[
+  \begin{align*}
+  P
+  &amp; =\frac{1}{T}\int_{-T/2}^{T/2}f^2(t)dt=\frac{1}{T}\int_{-T/2}^{T/2}[f_D+f_A(t)]^2dt \\
+  &amp; =f_D^2+\frac{1}{T}\int_{-T/2}^{T/2}f_A^2(t)dt
+  \end{align*}
+  \]</span></p></li>
+<li><p><strong>奇分量和偶分量</strong> <span class="math display">\[f(t)=f_e(t)+f_o(t)\]</span></p>
+<p>其中：<span class="math inline">\(f_e(t)\)</span>是偶分量，<span class="math inline">\(f_o(t)\)</span>是奇分量</p>
+<p><span class="math display">\[f_e(t)=\frac{1}{2}[f(t)+f(-t)] \qquad f_o(t)=\frac{1}{2}[f(t)-f(-t)]\]</span></p></li>
+<li><p><strong>实部和虚部</strong> <span class="math display">\[f(t)=f_r(t)+jf_i(t)\]</span></p>
+<p><span class="math display">\[f^*(t)=f_r(t)-jf_i(t)\]</span></p>
+<p>其中：<span class="math inline">\(f_r(t)=\frac{1}{2}[f(t)+f^*(t)] \qquad f_i(t)=\frac{1}{2j}[f(t)-f^*(t)]\)</span></p></li>
+<li><p><strong>脉冲分量</strong> <span class="math display">\[
+  \begin{align*}
+  f(t)
+  &amp; =\lim_{\Delta\tau\rightarrow0}\sum_{\tau=-\infty}^{+\infty}f(\tau)[u(t-\tau)-u(t-\tau-\Delta\tau)] \\
+  &amp; =\lim_{\Delta\tau\rightarrow0}\sum_{\tau=-\infty}^{+\infty}f(\tau)\frac{[u(t-\tau)-u(t-\tau-\Delta\tau)]}{\Delta\tau}\Delta\tau \\
+  &amp; =\int_{-\infty}^{+\infty}f(\tau)\delta(t-\tau)d\tau
+  \end{align*}
+  \]</span></p></li>
+</ul>
+<hr />
+<h1 id="系统">系统</h1>
+<hr />
+<h2 id="系统的分类">系统的分类</h2>
+<ul>
+<li>连续时间系统与离散时间系统</li>
+<li>线性系统与非线性系统</li>
+<li>时变系统与时不变系统</li>
+<li>可逆系统与不可逆系统</li>
+<li>因果系统与非因果系统</li>
+</ul>
+<h2 id="线性时不变系统">线性时不变系统</h2>
+<h3 id="叠加性与均匀性">叠加性与均匀性</h3>
+<p><strong>规则：线系统后叠加 <span class="math inline">\(\substack{?\\=}\)</span> 先叠加后系统</strong> 系统模型：<span class="math inline">\(r(t)=f[e(t)]\)</span> 先系统后叠加：<span class="math inline">\(a_1f[e_1(t)]+a_2f[e_2(t)]\)</span> 先叠加后系统：<span class="math inline">\(f[a_1e_1(t)+a_2e_2(t)]\)</span> 判断：<span class="math inline">\(f[a_1e_1(t)+a_2e_2(t)]\substack{?\\=}a_1f[e_1(t)]+a_2f[e_2(t)]\)</span> 典型非线性系统：<span class="math inline">\(r(t)=e^2(t) \qquad r(t)=e(t)+A\)</span></p>
+<h3 id="时不变特性">时不变特性</h3>
+<p><strong>规则：线系统后延时 <span class="math inline">\(\substack{?\\=}\)</span> 先延时后系统</strong> 系统模型：<span class="math inline">\(r(t)=f[e(t)]\)</span> 先系统后延时：<span class="math inline">\(r(t-t_0)\)</span> 先延时后系统：<span class="math inline">\(f[e(t-t_0)]\)</span> 判断：<span class="math inline">\(r(t-t_0)\substack{?\\=}f[e(t-t_0)]\)</span> 典型时变系统：<span class="math inline">\(r(t)=te(t) \quad r(t)=t+e(t) \quad r(t)=e(at),a\neq1\)</span></p>
+<h3 id="因果性">因果性</h3>
+<p><strong>规则：输出与未来的输入值无关</strong> 典型非因果系统：<span class="math inline">\(r(t)=e(-t) \qquad r(t)=e(2t)\)</span> <font color=red>注意：<span class="math inline">\(r(t)=cos(t+5)e(t)\)</span>为因果</font></p>
+<h3 id="即时性动态性">即时性（动态性）</h3>
+<p><strong>规则：当前输出仅仅与当前输入有关</strong> 典型动态系统：微积分系统，非因果系统</p>
+<h3 id="微分特性">微分特性</h3>
+<p><strong>规则：输入微分则输出也微分</strong></p>
+<h3 id="可逆系统">可逆系统</h3>
+<p><strong>规则：不存在多个输入对应一个输出</strong></p>
+<hr />
+]]></content>
+      <tags>
+        <tag>信号与系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>傅里叶级数与傅里叶变换</title>
+    <url>/2021/07/19/%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/</url>
+    <content><![CDATA[<p><strong>傅里叶变换能够将信号从时域变换到频域，使对信号的分析更加容易</strong></p>
+<span id="more"></span>
+<h1 id="傅里叶级数">傅里叶级数</h1>
+<hr />
+<h2 id="狄利克雷条件">狄利克雷条件：</h2>
+<p><span class="math inline">\(f(t)是以T为周期的可积函数，如果在某个周期上满足：\)</span> * <span class="math inline">\(连续或只有有限个第一类间断点\)</span> * <span class="math inline">\(至多只有有限个极值点\)</span></p>
+<hr />
+<h2 id="三角函数形式展开">三角函数形式展开：</h2>
+<p><span class="math display">\[f(t)=a_0+\sum_{n=1}^{\infty}(a_ncosn\omega_1t+b_nsinn\omega_1t)\]</span></p>
+<p><span class="math display">\[\begin{align*}
+其中：
+&amp; \omega_1=\frac{2\pi}{T} \\
+&amp; a_0=\frac{1}{T}\int_{0}^{T}f(t)dt \\
+&amp; a_n=\frac{2}{T}\int_{0}^{T}f(t)cosn\omega_1tdt \\
+&amp; b_n=\frac{2}{T}\int_{0}^{T}f(t)sinn\omega_1tdt
+\end{align*}\]</span></p>
+<p><span class="math display">\[f(t)=c_0+\sum_{n=1}^{\infty}c_ncos(n\omega_1t+\varphi_n)\]</span></p>
+<p><span class="math display">\[\begin{align*}
+其中：
+&amp; \omega_1=\frac{2\pi}{T} \\
+&amp; c_0=a_0 \\
+&amp; c_n=\sqrt{a_n^2+b_n^2} \\
+&amp; \varphi_n=-arctan\frac{b_n}{a_n}
+\end{align*}\]</span></p>
+<hr />
+<h2 id="指数函数形式展开">指数函数形式展开：</h2>
+<p><span class="math display">\[f(t)=\sum_{n=-\infty}^{+\infty}F(n\omega_1)e^{jn\omega_1t}\]</span></p>
+<p><span class="math display">\[\begin{align*}
+其中：
+&amp; \omega_1=\frac{2\pi}{T} \\
+&amp; F(n\omega_1)=\frac{1}{T}\int_0^Tf(t)e^{-jn\omega_1t}dt \\
+&amp; F(n\omega_1)= \frac{1}{2}(a_n-jb_n) \\
+&amp; F(-n\omega_1)= \frac{1}{2}(a_n+jb_n) \\
+&amp; F(n\omega_1)=|F(n\omega_1)|e^{j\varphi_n} \\
+&amp; |F(n\omega_1)|=\frac{1}{2}\sqrt{a_n^2+b_n^2}=\frac{1}{2}c_n \\
+&amp; \varphi_n=-arctan\frac{b_n}{a_n}
+\end{align*}\]</span></p>
+<h1 id="傅里叶变换">傅里叶变换</h1>
+<hr />
+<h2 id="傅里叶变换的引出">傅里叶变换的引出</h2>
+<p><span class="math inline">\(周期为T的信号f(t)的指数形式的傅里叶级数为：\)</span> <span class="math display">\[f(t)=\sum_{n=-\infty}^{+\infty}F(n\omega_1)e^{jn\omega_1t}\]</span></p>
+<p><span class="math display">\[F(n\omega_1)=\frac{1}{T}\int_{-T/2}^{T/2}f(t)e^{-jn\omega_1t}dt\]</span></p>
+<p><strong>傅里叶正变换：</strong> <span class="math inline">\(若f(t)为非周期信号，则f(t)的周期可看做为\infty，即T\rightarrow\infty\)</span> <span class="math inline">\(定义频谱密度函数：\)</span> <span class="math display">\[F(\omega)=\lim_{T\rightarrow\infty}TF(n\omega_1)\]</span></p>
+<p><span class="math display">\[F(\omega)=\lim_{T\rightarrow\infty}\int_{-T/2}^{T/2}f(t)e^{-jn\omega_1t}dt\]</span></p>
+<p><span class="math inline">\(当T\rightarrow\infty时，\Delta(n\omega_1)=\omega_1\rightarrow d\omega，(n\omega_1)\rightarrow\omega，所以：\)</span> <span class="math display">\[F(\omega)=\int_{-\infty}^{+\infty}f(t)e^{-j\omega t}dt\]</span></p>
+<p><strong>傅里叶逆变换：</strong> <span class="math display">\[\begin{align*}
+f(t)
+&amp; =\sum_{n=-\infty}^{+\infty}F(n\omega_1)e^{jn\omega_1t} \\
+&amp; =\sum_{n=-\infty}^{+\infty}\frac{F(n\omega_1)}{\omega_1}e^{jn\omega_1t}\omega_1 \\
+\end{align*}\]</span></p>
+<p><span class="math inline">\(当T\rightarrow\infty时，\Delta(n\omega_1)=\omega_1\rightarrow d\omega，(n\omega_1)\rightarrow\omega\)</span> <span class="math display">\[\frac{F(n\omega_1)}{\omega_1}=\frac{1}{2\pi}TF(n\omega_1)=\frac{1}{2\pi}F(\omega)\]</span></p>
+<p><span class="math display">\[
+f(t)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}F(\omega)e^{j\omega t}d\omega
+\]</span></p>
+<hr />
+<h2 id="傅里叶变换对">傅里叶变换对：</h2>
+<p><span class="math display">\[F(\omega)=\mathscr{F}[f(t)]=\int_{-\infty}^{+\infty}f(t)e^{-j\omega t}dt\]</span></p>
+<p><span class="math display">\[f(t)=\mathscr{F}^{-1}[F(\omega)]=\frac{1}{2\pi}\int_{-\infty}^{+\infty}F(\omega)e^{j\omega t}d\omega\]</span></p>
+<hr />
+<h2 id="奇偶虚实性">奇偶虚实性：</h2>
+<p><span class="math display">\[\begin{align*}
+&amp; F(\omega)=|F(\omega)|e^{j\phi(\omega)} \\
+&amp; F(\omega)=R(\omega)+jX(\omega) \\
+&amp; R(\omega)=2\int_0^\infty f_e(t)cos\omega tdt \\
+&amp; X(\omega)=-2\int_0^\infty f_o(t)sin\omega tdt \\
+&amp; |F(\omega)|=\sqrt{R^2(\omega)+X^2(\omega)} \\
+&amp; \phi(\omega)=arctan\frac{X(\omega)}{R(\omega)}
+\end{align*}\]</span></p>
+<hr />
+<h2 id="冲击信号和阶跃信号的傅里叶变换">冲击信号和阶跃信号的傅里叶变换</h2>
+<ul>
+<li><p><strong>冲击信号：</strong> <span class="math display">\[F(\omega)=\int_{-\infty}^{+\infty}\delta(t)e^{-j\omega t}dt=1\]</span></p></li>
+<li><p><strong>冲击偶信号：</strong> <span class="math display">\[\begin{align*}
+F(\omega)
+&amp; =\int_{-\infty}^{+\infty}\delta&#39;(t)e^{-j\omega t}dt \\
+&amp; =-[e^{-j\omega t}]&#39;|_{t=0} \\
+&amp; = j\omega
+\end{align*}\]</span></p></li>
+<li><p><strong>单位阶跃信号：</strong> <span class="math display">\[u(t)=\frac{1}{2}+\frac{1}{2}sgn(t)\]</span></p></li>
+</ul>
+<p><span class="math display">\[F(\omega)=\pi\delta(\omega)+\frac{1}{j\omega}\]</span></p>
+<hr />
+<h2 id="离散信号的傅里叶变换">离散信号的傅里叶变换</h2>
+<ul>
+<li><p><strong>方法一：</strong> <span class="math inline">\(取f_T(t)的一个周期信号，记为f_0(t)\)</span> <span class="math display">\[\begin{align*}
+&amp; f_0(t)\leftrightarrow F_0(\omega) \\
+&amp; F(n\omega_1)=\left.\frac{1}{T_1}F_0(\omega)\right|_{\omega=n\omega_1} \\
+&amp; F(\omega)=2\pi\sum_{n=-\infty}^{+\infty}F(n\omega_1)\delta(\omega-n\omega_1)
+\end{align*}\]</span></p></li>
+<li><p><strong>方法二（卷积定理）</strong> <span class="math inline">\(取f_T(t)的一个周期信号，记为f_0(t)\)</span> <span class="math display">\[\begin{align*}
+&amp; f_T(t)=f_0(t)*\delta_{T_1}(t) \\
+&amp; \delta_{T_1}(t)=\sum_{n=-\infty}^{+\infty}\delta(t-nT_1) \\
+&amp; \mathscr{F}[\delta_{T_1}(t)]=\omega_1\sum_{n=-\infty}^{+\infty}\delta(\omega-n\omega_1) \\
+&amp; F(\omega)=\omega_1\sum_{n=\infty}^{+\infty}F_0(n\omega_1)\delta(\omega-n\omega_1)
+\end{align*}\]</span></p></li>
+</ul>
+<hr />
+<h1 id="傅里叶变换的性质">傅里叶变换的性质</h1>
 <h2 id="对称性质">对称性质</h2>
 <p><span class="math display">\[若f(t)\leftrightarrow F(\omega) \qquad 则F(t)\leftrightarrow2\pi f(-\omega)\]</span></p>
 <hr />
@@ -12,7 +196,7 @@
 <p><span class="math display">\[若f_1(t)\leftrightarrow F_1(\omega)，f_2(t)\leftrightarrow F_2(\omega)\]</span></p>
 <p><span class="math display">\[则c_1f_1(t)+c_2f_2(t)\leftrightarrow c_1F_1(\omega)+c_2F_2(\omega)\]</span></p>
 <hr />
-<h2 id="奇偶虚实性">奇偶虚实性</h2>
+<h2 id="奇偶虚实性-1">奇偶虚实性</h2>
 <p><span class="math display">\[若f(t)\leftrightarrow F(\omega) \qquad 则f(-t)\leftrightarrow F(-\omega)=F^*(\omega)\]</span></p>
 <hr />
 <h2 id="尺度变换性质">尺度变换性质</h2>
@@ -68,17 +252,7 @@
 &amp; 则\quad \frac{1}{\omega_s}\sum_{n=-\infty}^{+\infty}f(t-\frac{2n\pi}{\omega_s})\leftrightarrow\sum_{n=-\infty}^{+\infty}F(\omega)\delta(\omega-n\omega_s)
 \end{align*}\]</span></p>
 <hr />
-]]></content>
-      <tags>
-        <tag>信号与系统</tag>
-        <tag>傅里叶变换性质</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>常用信号的傅里叶变换</title>
-    <url>/2021/07/19/%E5%B8%B8%E7%94%A8%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/</url>
-    <content><![CDATA[<h1 id="常用信号的傅里叶变换">常用信号的傅里叶变换</h1>
-<p><br> <span id="more"></span></p>
+<h1 id="常用信号的傅里叶变换">常用信号的傅里叶变换</h1>
 <table>
 <colgroup>
 <col style="width: 33%" />
@@ -184,16 +358,9 @@
   <entry>
     <title>希尔伯特变换</title>
     <url>/2021/07/19/%E5%B8%8C%E5%B0%94%E4%BC%AF%E7%89%B9%E5%8F%98%E6%8D%A2/</url>
-    <content><![CDATA[<h1 id="希尔伯特变换">希尔伯特变换</h1>
-<p><br></p>
-<!-- ```java
-public class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello World");
-    }
-}
-``` -->
+    <content><![CDATA[<p><strong>希尔伯特变换能改变信号的相位</strong></p>
 <span id="more"></span>
+<h1 id="希尔伯特变换">希尔伯特变换</h1>
 <hr />
 <h3 id="希尔伯特正变换">希尔伯特正变换</h3>
 <ul>
@@ -242,77 +409,10 @@ F(\omega)
       </tags>
   </entry>
   <entry>
-    <title>常用信号的拉氏变换</title>
-    <url>/2021/07/19/%E5%B8%B8%E7%94%A8%E4%BF%A1%E5%8F%B7%E7%9A%84%E6%8B%89%E6%B0%8F%E5%8F%98%E6%8D%A2/</url>
-    <content><![CDATA[<h1 id="常用信号的拉式变换">常用信号的拉式变换</h1>
-<p><br> <span id="more"></span></p>
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><span class="math display">\[信号f(t)\quad t&gt;0\]</span></th>
-<th><span class="math display">\[拉普拉斯变换F(s)\]</span></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math display">\[\delta(t)\]</span></td>
-<td><span class="math display">\[1\]</span></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><span class="math display">\[u(t)\]</span></td>
-<td><span class="math display">\[\frac{1}{s}\]</span></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><span class="math display">\[e^{-\alpha t}\]</span></td>
-<td><span class="math display">\[\frac{1}{\alpha+s}\]</span></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><span class="math display">\[\left\{\begin{align*}&amp; e^{-\alpha t}\quad0&lt;t&lt;T \\ &amp; 0\qquad 其他\end{align*}\right.\]</span></td>
-<td><span class="math display">\[\frac{1}{\alpha+s}[1-e^{-(\alpha+s)T}]\]</span></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><span class="math display">\[t^n\]</span></td>
-<td><span class="math display">\[\frac{n!}{s^{n+1}}\]</span></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><span class="math display">\[sin(\omega_0t)\]</span></td>
-<td><span class="math display">\[\frac{\omega_0}{s^2+\omega_0^2}\]</span></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><span class="math display">\[cos(\omega_0t)\]</span></td>
-<td><span class="math display">\[\frac{s}{s^2+\omega_0^2}\]</span></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><span class="math display">\[\delta_T(t)\]</span></td>
-<td><span class="math display">\[\frac{1}{1-e^{-sT}}\]</span></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-]]></content>
-      <tags>
-        <tag>信号与系统</tag>
-        <tag>拉普拉斯变换</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>拉普拉斯变换的性质</title>
-    <url>/2021/07/19/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2%E7%9A%84%E6%80%A7%E8%B4%A8/</url>
-    <content><![CDATA[<h1 id="拉普拉斯变换的性质">拉普拉斯变换的性质</h1>
-<p><br> <span id="more"></span></p>
+    <title>拉普拉斯变换</title>
+    <url>/2021/07/19/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2/</url>
+    <content><![CDATA[<p><strong>拉普拉斯变换将信号从时域变换到了复频域，引入了衰减因子<span class="math inline">\(e^{-at}\)</span>，解决了部分发散信号不能进行傅里叶变换的问题。</strong> <span id="more"></span></p>
+<h1 id="拉普拉斯变换的性质">拉普拉斯变换的性质</h1>
 <table>
 <thead>
 <tr class="header">
@@ -390,10 +490,68 @@ F(\omega)
 <p><span class="math inline">\(若f(t)中包含k\delta(t)，此定理需要修改，\\ 此时\mathscr{L}[f(t)]=F(s)=k+F_1(s)，初值定理为：\)</span> <span class="math display">\[f(0_+)=\lim_{s\rightarrow\infty}sF_1(s)\]</span></p></li>
 <li><p><strong>终值定理：</strong> <span class="math inline">\(f(t)必须存在终值\)</span> <span class="math display">\[f(\infty)=\lim_{s\rightarrow0}sF(s)\]</span></p></li>
 </ul>
+<hr />
+<h1 id="常用信号的拉式变换">常用信号的拉式变换</h1>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math display">\[信号f(t)\quad t&gt;0\]</span></th>
+<th><span class="math display">\[拉普拉斯变换F(s)\]</span></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math display">\[\delta(t)\]</span></td>
+<td><span class="math display">\[1\]</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[u(t)\]</span></td>
+<td><span class="math display">\[\frac{1}{s}\]</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[e^{-\alpha t}\]</span></td>
+<td><span class="math display">\[\frac{1}{\alpha+s}\]</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\left\{\begin{align*}&amp; e^{-\alpha t}\quad0&lt;t&lt;T \\ &amp; 0\qquad 其他\end{align*}\right.\]</span></td>
+<td><span class="math display">\[\frac{1}{\alpha+s}[1-e^{-(\alpha+s)T}]\]</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[t^n\]</span></td>
+<td><span class="math display">\[\frac{n!}{s^{n+1}}\]</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[sin(\omega_0t)\]</span></td>
+<td><span class="math display">\[\frac{\omega_0}{s^2+\omega_0^2}\]</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[cos(\omega_0t)\]</span></td>
+<td><span class="math display">\[\frac{s}{s^2+\omega_0^2}\]</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\delta_T(t)\]</span></td>
+<td><span class="math display">\[\frac{1}{1-e^{-sT}}\]</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 ]]></content>
       <tags>
         <tag>信号与系统</tag>
-        <tag>拉普拉斯变换性质</tag>
+        <tag>拉普拉斯变换</tag>
       </tags>
   </entry>
 </search>
