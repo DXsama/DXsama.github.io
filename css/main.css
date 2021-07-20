@@ -1245,7 +1245,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #e78277;
+  background: #ffff9f;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2751,4 +2751,15 @@ mjx-container + br {
   .pagination {
     margin: 8px 0 0;
   }
+}
+* {
+  cursor: url("/images/sword.ico"), auto !important;
+}
+:active {
+  cursor: url("/images/loading.ico"), auto !important;
+}
+body {
+  background: url("/images/background.png") no-repeat center fixed;
+  background-size: 100%;
+  opacity: 0.9;
 }
