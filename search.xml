@@ -135,6 +135,73 @@ F(\omega)
       </tags>
   </entry>
   <entry>
+    <title>常用信号的拉氏变换</title>
+    <url>/2021/07/19/%E5%B8%B8%E7%94%A8%E4%BF%A1%E5%8F%B7%E7%9A%84%E6%8B%89%E6%B0%8F%E5%8F%98%E6%8D%A2/</url>
+    <content><![CDATA[<h1 id="常用信号的拉式变换">常用信号的拉式变换</h1>
+<p><br> <span id="more"></span></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math display">\[信号f(t)\quad t&gt;0\]</span></th>
+<th><span class="math display">\[拉普拉斯变换F(s)\]</span></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math display">\[\delta(t)\]</span></td>
+<td><span class="math display">\[1\]</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[u(t)\]</span></td>
+<td><span class="math display">\[\frac{1}{s}\]</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[e^{-\alpha t}\]</span></td>
+<td><span class="math display">\[\frac{1}{\alpha+s}\]</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\left\{\begin{align*}&amp; e^{-\alpha t}\quad0&lt;t&lt;T \\ &amp; 0\qquad 其他\end{align*}\right.\]</span></td>
+<td><span class="math display">\[\frac{1}{\alpha+s}[1-e^{-(\alpha+s)T}]\]</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[t^n\]</span></td>
+<td><span class="math display">\[\frac{n!}{s^{n+1}}\]</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[sin(\omega_0t)\]</span></td>
+<td><span class="math display">\[\frac{\omega_0}{s^2+\omega_0^2}\]</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[cos(\omega_0t)\]</span></td>
+<td><span class="math display">\[\frac{s}{s^2+\omega_0^2}\]</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\delta_T(t)\]</span></td>
+<td><span class="math display">\[\frac{1}{1-e^{-sT}}\]</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <tags>
+        <tag>信号与系统</tag>
+        <tag>拉普拉斯变换</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>常用信号的傅里叶变换</title>
     <url>/2021/07/19/%E5%B8%B8%E7%94%A8%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/</url>
     <content><![CDATA[<h1 id="常用信号的傅里叶变换">常用信号的傅里叶变换</h1>
@@ -239,73 +306,6 @@ F(\omega)
       <tags>
         <tag>信号与系统</tag>
         <tag>傅里叶变换</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>常用信号的拉氏变换</title>
-    <url>/2021/07/19/%E5%B8%B8%E7%94%A8%E4%BF%A1%E5%8F%B7%E7%9A%84%E6%8B%89%E6%B0%8F%E5%8F%98%E6%8D%A2/</url>
-    <content><![CDATA[<h1 id="常用信号的拉式变换">常用信号的拉式变换</h1>
-<p><br> <span id="more"></span></p>
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><span class="math display">\[信号f(t)\quad t&gt;0\]</span></th>
-<th><span class="math display">\[拉普拉斯变换F(s)\]</span></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math display">\[\delta(t)\]</span></td>
-<td><span class="math display">\[1\]</span></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><span class="math display">\[u(t)\]</span></td>
-<td><span class="math display">\[\frac{1}{s}\]</span></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><span class="math display">\[e^{-\alpha t}\]</span></td>
-<td><span class="math display">\[\frac{1}{\alpha+s}\]</span></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><span class="math display">\[\left\{\begin{align*}&amp; e^{-\alpha t}\quad0&lt;t&lt;T \\ &amp; 0\qquad 其他\end{align*}\right.\]</span></td>
-<td><span class="math display">\[\frac{1}{\alpha+s}[1-e^{-(\alpha+s)T}]\]</span></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><span class="math display">\[t^n\]</span></td>
-<td><span class="math display">\[\frac{n!}{s^{n+1}}\]</span></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><span class="math display">\[sin(\omega_0t)\]</span></td>
-<td><span class="math display">\[\frac{\omega_0}{s^2+\omega_0^2}\]</span></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><span class="math display">\[cos(\omega_0t)\]</span></td>
-<td><span class="math display">\[\frac{s}{s^2+\omega_0^2}\]</span></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><span class="math display">\[\delta_T(t)\]</span></td>
-<td><span class="math display">\[\frac{1}{1-e^{-sT}}\]</span></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-]]></content>
-      <tags>
-        <tag>信号与系统</tag>
-        <tag>拉普拉斯变换</tag>
       </tags>
   </entry>
   <entry>
