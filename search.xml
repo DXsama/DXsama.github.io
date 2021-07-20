@@ -470,7 +470,7 @@ F(\omega)
 <tr class="odd">
 <td><span class="math display">\[时域微分\]</span></td>
 <td><span class="math display">\[\frac{d^nf(t)}{dt^n}\]</span></td>
-<td><span class="math display">\[s^nF(s)-\sum_{r=0}^ns^{n-r-1}f^{(r)}(0_-)\]</span></td>
+<td><span class="math display">\[s^nF(s)-\sum_{r=0}^{n-1}s^{n-r-1}f^{(r)}(0_-)\]</span></td>
 <td></td>
 </tr>
 <tr class="even">
