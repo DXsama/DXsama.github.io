@@ -30,7 +30,7 @@
 <meta property="og:description" content="拉普拉斯变换将信号从时域变换到了复频域，引入了衰减因子\(e^{-at}\)，解决了部分发散信号不能进行傅里叶变换的问题。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-07-19T04:19:34.000Z">
-<meta property="article:modified_time" content="2021-07-28T10:59:29.615Z">
+<meta property="article:modified_time" content="2021-07-28T11:00:48.643Z">
 <meta property="article:author" content="dxsama">
 <meta property="article:tag" content="信号与系统">
 <meta property="article:tag" content="拉普拉斯变换">
@@ -215,7 +215,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-28 18:59:29" itemprop="dateModified" datetime="2021-07-28T18:59:29+08:00">2021-07-28</time>
+                <time title="修改时间：2021-07-28 19:00:48" itemprop="dateModified" datetime="2021-07-28T19:00:48+08:00">2021-07-28</time>
               </span>
 
           
@@ -393,11 +393,15 @@
 <p>使用定义式求解拉普拉斯逆变换过于复杂，通常使用<strong>部分分式分解法</strong>或<strong>留数法</strong></p>
 <h2 id="部分分式分解法">部分分式分解法</h2>
 <p>若<span class="math inline">\(F(s)\)</span>形如<span class="math inline">\(\frac{A(s)}{B(s)}\)</span>，其中<span class="math inline">\(A(s)\)</span>、<span class="math inline">\(B(s)\)</span>为<span class="math inline">\(s\)</span>的多项式，或可通过拉普拉斯变换的性质化成这种形式，则使用部分分式分解法。</p>
-<p><strong>解题步骤：</strong> 1. 使用拉普拉斯变换的性质将<span class="math inline">\(F(s)\)</span>化成有理分式 2. 对<span class="math inline">\(B(s)\)</span>进行因式分解，将其化成<span class="math inline">\(s\)</span>的一阶多项式相乘，若实数域不能分解可将其在复数域分解，对于二阶的因式可用求根公式将其化成一阶，对于高于二阶的因式可用长除法将其化成低阶因式。<strong><span class="math inline">\(B(s)\)</span>是几阶有理式就有几个因式</strong>。 因式分解后<span class="math inline">\(F(s)\)</span>可写成如下形式： <span class="math display">\[F(s)=\frac{A(s)}{(s-p_1)(s-p_2)\cdots(s-p_n)}\]</span> 3. 可将<span class="math inline">\(F(s)\)</span>写成如下形式： <span class="math display">\[F(s)=\frac{K_1}{s-p_1}+\frac{K_2}{s-p_2}+\cdots+\frac{K_n}{s-p_n}\]</span></p>
-<pre><code>确定$K_i(i=1,2,\cdots,n)$的值：等号两边同时乘$(s-p_i)$，再取$s=p_i$即可得到$K_i$的值  </code></pre>
-<ol start="4" type="1">
-<li>通过常用信号的拉普拉斯变换对解出<span class="math inline">\(F(s)\)</span>的逆变换。如： <span class="math display">\[\mathscr{L}^{-1}[\frac{E}{s+\alpha}]=Ee^{-\alpha t}u(t)\]</span></li>
-</ol>
+<p><strong>解题步骤：</strong> 1. 使用拉普拉斯变换的性质将<span class="math inline">\(F(s)\)</span>化成有理分式<br />
+2. 对<span class="math inline">\(B(s)\)</span>进行因式分解，将其化成<span class="math inline">\(s\)</span>的一阶多项式相乘，若实数域不能分解可将其在复数域分解，对于二阶的因式可用求根公式将其化成一阶，对于高于二阶的因式可用长除法将其化成低阶因式。<strong><span class="math inline">\(B(s)\)</span>是几阶有理式就有几个因式</strong>。<br />
+因式分解后<span class="math inline">\(F(s)\)</span>可写成如下形式：<br />
+<span class="math display">\[F(s)=\frac{A(s)}{(s-p_1)(s-p_2)\cdots(s-p_n)}\]</span><br />
+3. 可将<span class="math inline">\(F(s)\)</span>写成如下形式：<br />
+<span class="math display">\[F(s)=\frac{K_1}{s-p_1}+\frac{K_2}{s-p_2}+\cdots+\frac{K_n}{s-p_n}\]</span><br />
+确定<span class="math inline">\(K_i(i=1,2,\cdots,n)\)</span>的值：等号两边同时乘<span class="math inline">\((s-p_i)\)</span>，再取<span class="math inline">\(s=p_i\)</span>即可得到<span class="math inline">\(K_i\)</span>的值<br />
+4. 通过常用信号的拉普拉斯变换对解出<span class="math inline">\(F(s)\)</span>的逆变换。如：<br />
+<span class="math display">\[\mathscr{L}^{-1}[\frac{E}{s+\alpha}]=Ee^{-\alpha t}u(t)\]</span></p>
 <h2 id="留数法">留数法</h2>
 <p>若<span class="math inline">\(F(s)\)</span>为无理函数，则可以使用留数法。 <span class="math inline">\(设在极点s=p_i出的留数为r_i\)</span> <span class="math display">\[f(t)=\mathscr{L}^{-1}[F(s)]=\sum_{i=1}^nr_i\]</span></p>
 <p><span class="math inline">\(若p_i为一阶极点，则\)</span> <span class="math display">\[r_i=[(s-p_i)F(s)e^{st}]\big|_{s=p_i}\]</span></p>
