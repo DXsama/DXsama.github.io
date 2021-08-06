@@ -109,6 +109,59 @@
       </tags>
   </entry>
   <entry>
+    <title>希尔伯特变换</title>
+    <url>/2021/07/19/%E5%B8%8C%E5%B0%94%E4%BC%AF%E7%89%B9%E5%8F%98%E6%8D%A2/</url>
+    <content><![CDATA[<p><strong>希尔伯特变换能改变信号的相位</strong></p>
+<span id="more"></span>
+<h1 id="希尔伯特变换">希尔伯特变换</h1>
+<hr />
+<h3 id="希尔伯特正变换">希尔伯特正变换</h3>
+<ul>
+<li><p><strong>时域：</strong> <span class="math display">\[\hat{f}(t)=\mathscr{H}[f(t)]=f(t)*\frac{1}{\pi t}=\frac{1}{\pi}\int_{-\infty}^{+\infty}\frac{f(\tau)}{t-\tau}d\tau\]</span></p></li>
+<li><p><strong>频域：</strong> <span class="math display">\[\begin{aligned}
+\hat{F}(\omega)
+&amp; =F(\omega)\cdot[-jsgn(\omega)] \\
+&amp; =\left\{
+  \begin{align*}
+  &amp; -jF(\omega) \qquad \omega&gt;0 \\
+  &amp; +jF(\omega) \qquad \omega&lt;0
+  \end{align*}\right.
+\end{aligned}\]</span></p></li>
+<li><p><strong>意义：</strong> <span class="math inline">\(信号经过希尔伯特变换后相位滞后\frac{\pi}{2}，如: \\ \mathscr{H}[cos(\omega_0t)]=cos(\omega_0t-\frac{\pi}{2})=sin(\omega_0t)\)</span></p></li>
+</ul>
+<hr />
+<h3 id="希尔伯特反变换">希尔伯特反变换</h3>
+<ul>
+<li><p><strong>时域：</strong> <span class="math display">\[f(t)=\mathscr{H}^{-1}[\hat{f}(t)]=\hat{f}(t)*-\frac{1}{\pi t}=-\frac{1}{\pi}\int_{-\infty}^{+\infty}\frac{\hat{f}(\tau)}{t-\tau}d\tau\]</span></p></li>
+<li><p><strong>频域：</strong> <span class="math display">\[\begin{aligned}
+F(\omega)
+&amp; =\hat{F}(\omega)\cdot jsgn(\omega) \\
+&amp; =\left\{
+  \begin{align*}
+  &amp; +j\hat{F}(\omega) \qquad \omega&gt;0 \\
+  &amp; -j\hat{F}(\omega) \qquad \omega&lt;0
+  \end{align*}\right.
+\end{aligned}\]</span></p></li>
+<li><p><strong>意义：</strong> <span class="math inline">\(信号经过希尔伯特反变换后相位超前\frac{\pi}{2}，如: \\ \mathscr{H}[cos(\omega_0t)]=cos(\omega_0t+\frac{\pi}{2})=-sin(\omega_0t)\)</span></p></li>
+</ul>
+<hr />
+<h3 id="希尔伯特约束关系">希尔伯特约束关系</h3>
+<p><span class="math inline">\(因果系统系统函数H(\omega)的实部与虚部满足希尔伯特变换约束关系，即：\)</span></p>
+<p><span class="math inline">\(因果系统：\)</span> <span class="math display">\[\begin{align*}
+&amp; h(t)=h(t)u(t) \\
+&amp; H(\omega)=R(\omega)+jX(\omega)
+\end{align*}\]</span></p>
+<p><span class="math inline">\(希尔伯特约束关系：\)</span> <span class="math display">\[\begin{align*}
+&amp; R(\omega)=\mathscr{H}[X(\omega)]=X(\omega)*\frac{1}{\pi\omega}=\frac{1}{\pi}\int_{-\infty}^{+\infty}\frac{X(\Omega)}{\omega-\Omega}d\Omega \\
+&amp; X(\omega)=\mathscr{H}^{-1}[R(\omega)]=R(\omega)*-\frac{1}{\pi\omega}=-\frac{1}{\pi}\int_{-\infty}^{+\infty}\frac{R(\Omega)}{\omega-\Omega}d\Omega 
+\end{align*}\]</span></p>
+]]></content>
+      <tags>
+        <tag>信号与系统</tag>
+        <tag>希尔伯特变换</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>傅里叶级数与傅里叶变换</title>
     <url>/2021/07/19/%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/</url>
     <content><![CDATA[<p><strong>傅里叶变换能够将信号从时域变换到频域，使对信号的分析更加容易</strong></p>
@@ -376,59 +429,6 @@ F(\omega)
       </tags>
   </entry>
   <entry>
-    <title>希尔伯特变换</title>
-    <url>/2021/07/19/%E5%B8%8C%E5%B0%94%E4%BC%AF%E7%89%B9%E5%8F%98%E6%8D%A2/</url>
-    <content><![CDATA[<p><strong>希尔伯特变换能改变信号的相位</strong></p>
-<span id="more"></span>
-<h1 id="希尔伯特变换">希尔伯特变换</h1>
-<hr />
-<h3 id="希尔伯特正变换">希尔伯特正变换</h3>
-<ul>
-<li><p><strong>时域：</strong> <span class="math display">\[\hat{f}(t)=\mathscr{H}[f(t)]=f(t)*\frac{1}{\pi t}=\frac{1}{\pi}\int_{-\infty}^{+\infty}\frac{f(\tau)}{t-\tau}d\tau\]</span></p></li>
-<li><p><strong>频域：</strong> <span class="math display">\[\begin{aligned}
-\hat{F}(\omega)
-&amp; =F(\omega)\cdot[-jsgn(\omega)] \\
-&amp; =\left\{
-  \begin{align*}
-  &amp; -jF(\omega) \qquad \omega&gt;0 \\
-  &amp; +jF(\omega) \qquad \omega&lt;0
-  \end{align*}\right.
-\end{aligned}\]</span></p></li>
-<li><p><strong>意义：</strong> <span class="math inline">\(信号经过希尔伯特变换后相位滞后\frac{\pi}{2}，如: \\ \mathscr{H}[cos(\omega_0t)]=cos(\omega_0t-\frac{\pi}{2})=sin(\omega_0t)\)</span></p></li>
-</ul>
-<hr />
-<h3 id="希尔伯特反变换">希尔伯特反变换</h3>
-<ul>
-<li><p><strong>时域：</strong> <span class="math display">\[f(t)=\mathscr{H}^{-1}[\hat{f}(t)]=\hat{f}(t)*-\frac{1}{\pi t}=-\frac{1}{\pi}\int_{-\infty}^{+\infty}\frac{\hat{f}(\tau)}{t-\tau}d\tau\]</span></p></li>
-<li><p><strong>频域：</strong> <span class="math display">\[\begin{aligned}
-F(\omega)
-&amp; =\hat{F}(\omega)\cdot jsgn(\omega) \\
-&amp; =\left\{
-  \begin{align*}
-  &amp; +j\hat{F}(\omega) \qquad \omega&gt;0 \\
-  &amp; -j\hat{F}(\omega) \qquad \omega&lt;0
-  \end{align*}\right.
-\end{aligned}\]</span></p></li>
-<li><p><strong>意义：</strong> <span class="math inline">\(信号经过希尔伯特反变换后相位超前\frac{\pi}{2}，如: \\ \mathscr{H}[cos(\omega_0t)]=cos(\omega_0t+\frac{\pi}{2})=-sin(\omega_0t)\)</span></p></li>
-</ul>
-<hr />
-<h3 id="希尔伯特约束关系">希尔伯特约束关系</h3>
-<p><span class="math inline">\(因果系统系统函数H(\omega)的实部与虚部满足希尔伯特变换约束关系，即：\)</span></p>
-<p><span class="math inline">\(因果系统：\)</span> <span class="math display">\[\begin{align*}
-&amp; h(t)=h(t)u(t) \\
-&amp; H(\omega)=R(\omega)+jX(\omega)
-\end{align*}\]</span></p>
-<p><span class="math inline">\(希尔伯特约束关系：\)</span> <span class="math display">\[\begin{align*}
-&amp; R(\omega)=\mathscr{H}[X(\omega)]=X(\omega)*\frac{1}{\pi\omega}=\frac{1}{\pi}\int_{-\infty}^{+\infty}\frac{X(\Omega)}{\omega-\Omega}d\Omega \\
-&amp; X(\omega)=\mathscr{H}^{-1}[R(\omega)]=R(\omega)*-\frac{1}{\pi\omega}=-\frac{1}{\pi}\int_{-\infty}^{+\infty}\frac{R(\Omega)}{\omega-\Omega}d\Omega 
-\end{align*}\]</span></p>
-]]></content>
-      <tags>
-        <tag>信号与系统</tag>
-        <tag>希尔伯特变换</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>拉普拉斯变换</title>
     <url>/2021/07/19/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2/</url>
     <content><![CDATA[<p><strong>拉普拉斯变换将信号从时域变换到了复频域，引入了衰减因子<span class="math inline">\(e^{-at}\)</span>，解决了部分发散信号不能进行傅里叶变换的问题。</strong> <span id="more"></span></p>
@@ -580,6 +580,18 @@ F(\omega)
 <p>若<span class="math inline">\(F(s)\)</span>为无理函数，则可以使用留数法。 <span class="math inline">\(设在极点s=p_i出的留数为r_i\)</span> <span class="math display">\[f(t)=\mathscr{L}^{-1}[F(s)]=\sum_{i=1}^nr_i\]</span></p>
 <p><span class="math inline">\(若p_i为一阶极点，则\)</span> <span class="math display">\[r_i=[(s-p_i)F(s)e^{st}]\big|_{s=p_i}\]</span></p>
 <p><span class="math inline">\(若p_i为k阶极点，则\)</span> <span class="math display">\[r_i=\frac{1}{(k-1)!}[\frac{d^{k-1}}{ds^{k-1}}(s-p_i)^kF(s)e^{st}]\big|_{s=p_i}\]</span></p>
+<hr />
+<h1 id="线性系统的稳定性">线性系统的稳定性</h1>
+<ul>
+<li>方法一：当输入有界时，输出有界，则系统稳定，即： <span class="math display">\[|e(t)|&lt;M_1\Longrightarrow |r(t)|&lt;M_2\]</span></li>
+<li>方法二：若<span class="math inline">\(h(t)\)</span>绝对可积，则系统稳定： <span class="math display">\[\int_{-\infty}^{+\infty}|h(t)|dt&lt;M\]</span></li>
+<li>方法三：求解<span class="math inline">\(H(s)\)</span>
+<ul>
+<li>若极点分布在虚轴左侧，则系统稳定。</li>
+<li>若极点为虚轴上的一阶极点，则系统临界稳定，临界稳定也属于不稳定。</li>
+<li>若极点分布在虚轴右侧或为虚轴的二阶及以上极点时，系统不稳定。</li>
+</ul></li>
+</ul>
 <hr />
 ]]></content>
       <tags>
