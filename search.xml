@@ -1,114 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>信号与系统</title>
-    <url>/2021/07/20/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<p><strong>介绍了信号的分类、典型信号、信号的运算、信号的分解、系统的分类</strong></p>
-<span id="more"></span>
-<h1 id="信号">信号</h1>
-<hr />
-<h2 id="信号的分类">信号的分类</h2>
-<ul>
-<li><strong>连续信号和离散信号</strong></li>
-<li><strong>周期信号和非周期信号：</strong> 周期信号不一定有最小周期，例如：<span class="math inline">\(f(t)=A\)</span></li>
-<li><strong>能量信号和功率信号：</strong> 一个信号如果不是能量信号可能是功率信号，但是如果一个信号既不是能量信号也不是功率信号那么这个信号是<strong>功率无限信号</strong> 例如：<span class="math inline">\(f(t)=e^t\)</span></li>
-<li><strong>确定信号和随机信号：</strong> 确定信号：能给出确定的<span class="math inline">\(f(t)\)</span>的表达式 随机信号：只能知道信号可能的取值，具体的取值不确定</li>
-</ul>
-<hr />
-<h2 id="典型的信号">典型的信号</h2>
-<ul>
-<li><strong>指数信号：</strong> <span class="math display">\[f(t)=Ke^{-at}\quad t&gt;0\]</span></li>
-<li><strong>正弦信号：</strong> <span class="math display">\[f(t)=Ksin(\omega t+\theta)\]</span></li>
-<li><strong>复指数信号：</strong> <span class="math display">\[f(t)=Ke^{(\sigma+j\omega)t}=Ke^{\sigma t}cos(\omega t)+jKe^{\sigma t}sin(\omega t)\]</span></li>
-<li><strong>抽样信号：</strong> <span class="math display">\[Sa(t)=\frac{sin(t)}{t}\]</span></li>
-</ul>
-<p><span class="math display">\[\int_{-\infty}^{+\infty}Sa(t)dt=\pi\]</span></p>
-<p><span class="math display">\[sinc(t)=Sa(\pi t)=\frac{sin(\pi t)}{\pi t}\]</span></p>
-<hr />
-<h2 id="信号的运算">信号的运算</h2>
-<ul>
-<li><strong>移位、反褶、尺度变换</strong><br />
-移位：<span class="math inline">\(f(t)\rightarrow f(t\pm t_0)\)</span>，左加右减<br />
-反褶：<span class="math inline">\(f(t)\rightarrow f(-t)\)</span><br />
-尺度变换：<span class="math inline">\(f(t)\rightarrow f(at)\)</span><br />
-</li>
-<li><p><strong>微分、积分</strong><br />
-<font color=red>注意：跳变点微分之后会出现冲击，微分和积分不具有可逆性。</font><br />
-<span class="math display">\[\frac{d}{dt}\left[\int_{-\infty}^tf(\tau)d\tau\right]=f(t) \quad \int_{-\infty}^t\left[\frac{d}{d\tau}f(\tau)\right]d\tau\neq f(t)\]</span></p></li>
-<li><p><strong>相乘、相加</strong><br />
-<font color=red>注意：信号相乘或相加就是对应点相乘或相加。</font></p></li>
-</ul>
-<hr />
-<h2 id="信号的分解">信号的分解</h2>
-<ul>
-<li><p><strong>直流分量和交流分量</strong> <span class="math display">\[f(t)=f_D+f_A(t)\]</span></p>
-<p><span class="math display">\[f_D=\lim_{T\rightarrow\infty}\frac{1}{T}\int_{-T/2}^{T/2}f(t)dt \qquad \int_{-\infty}^{+\infty}f_A(t)dt=0\]</span></p>
-<p><span class="math display">\[
-  \begin{align*}
-  P
-  &amp; =\frac{1}{T}\int_{-T/2}^{T/2}f^2(t)dt=\frac{1}{T}\int_{-T/2}^{T/2}[f_D+f_A(t)]^2dt \\
-  &amp; =f_D^2+\frac{1}{T}\int_{-T/2}^{T/2}f_A^2(t)dt
-  \end{align*}
-  \]</span></p></li>
-<li><p><strong>奇分量和偶分量</strong> <span class="math display">\[f(t)=f_e(t)+f_o(t)\]</span></p>
-<p>其中：<span class="math inline">\(f_e(t)\)</span>是偶分量，<span class="math inline">\(f_o(t)\)</span>是奇分量</p>
-<p><span class="math display">\[f_e(t)=\frac{1}{2}[f(t)+f(-t)] \qquad f_o(t)=\frac{1}{2}[f(t)-f(-t)]\]</span></p></li>
-<li><p><strong>实部和虚部</strong> <span class="math display">\[f(t)=f_r(t)+jf_i(t)\]</span></p>
-<p><span class="math display">\[f^*(t)=f_r(t)-jf_i(t)\]</span></p>
-<p>其中：<span class="math inline">\(f_r(t)=\frac{1}{2}[f(t)+f^*(t)] \qquad f_i(t)=\frac{1}{2j}[f(t)-f^*(t)]\)</span></p></li>
-<li><p><strong>脉冲分量</strong> <span class="math display">\[
-  \begin{align*}
-  f(t)
-  &amp; =\lim_{\Delta\tau\rightarrow0}\sum_{\tau=-\infty}^{+\infty}f(\tau)[u(t-\tau)-u(t-\tau-\Delta\tau)] \\
-  &amp; =\lim_{\Delta\tau\rightarrow0}\sum_{\tau=-\infty}^{+\infty}f(\tau)\frac{[u(t-\tau)-u(t-\tau-\Delta\tau)]}{\Delta\tau}\Delta\tau \\
-  &amp; =\int_{-\infty}^{+\infty}f(\tau)\delta(t-\tau)d\tau
-  \end{align*}
-  \]</span></p></li>
-</ul>
-<hr />
-<h1 id="系统">系统</h1>
-<hr />
-<h2 id="系统的分类">系统的分类</h2>
-<ul>
-<li>连续时间系统与离散时间系统</li>
-<li>线性系统与非线性系统</li>
-<li>时变系统与时不变系统</li>
-<li>可逆系统与不可逆系统</li>
-<li>因果系统与非因果系统</li>
-</ul>
-<h2 id="线性时不变系统">线性时不变系统</h2>
-<h3 id="叠加性与均匀性">叠加性与均匀性</h3>
-<p><strong>规则：线系统后叠加 <span class="math inline">\(\substack{?\\=}\)</span> 先叠加后系统</strong><br />
-系统模型：<span class="math inline">\(r(t)=f[e(t)]\)</span><br />
-先系统后叠加：<span class="math inline">\(a_1f[e_1(t)]+a_2f[e_2(t)]\)</span><br />
-先叠加后系统：<span class="math inline">\(f[a_1e_1(t)+a_2e_2(t)]\)</span><br />
-判断：<span class="math inline">\(f[a_1e_1(t)+a_2e_2(t)]\substack{?\\=}a_1f[e_1(t)]+a_2f[e_2(t)]\)</span><br />
-典型非线性系统：<span class="math inline">\(r(t)=e^2(t) \qquad r(t)=e(t)+A\)</span></p>
-<h3 id="时不变特性">时不变特性</h3>
-<p><strong>规则：线系统后延时 <span class="math inline">\(\substack{?\\=}\)</span> 先延时后系统</strong><br />
-系统模型：<span class="math inline">\(r(t)=f[e(t)]\)</span><br />
-先系统后延时：<span class="math inline">\(r(t-t_0)\)</span><br />
-先延时后系统：<span class="math inline">\(f[e(t-t_0)]\)</span><br />
-判断：<span class="math inline">\(r(t-t_0)\substack{?\\=}f[e(t-t_0)]\)</span><br />
-典型时变系统：<span class="math inline">\(r(t)=te(t) \quad r(t)=t+e(t) \quad r(t)=e(at),a\neq1\)</span></p>
-<h3 id="因果性">因果性</h3>
-<p><strong>规则：输出与未来的输入值无关</strong><br />
-典型非因果系统：<span class="math inline">\(r(t)=e(-t) \qquad r(t)=e(2t)\)</span><br />
-<font color=red>注意：<span class="math inline">\(r(t)=cos(t+5)e(t)\)</span>为因果</font></p>
-<h3 id="即时性动态性">即时性（动态性）</h3>
-<p><strong>规则：当前输出仅仅与当前输入有关</strong><br />
-典型动态系统：微积分系统，非因果系统</p>
-<h3 id="微分特性">微分特性</h3>
-<p><strong>规则：输入微分则输出也微分</strong></p>
-<h3 id="可逆系统">可逆系统</h3>
-<p><strong>规则：不存在多个输入对应一个输出</strong></p>
-<hr />
-]]></content>
-      <tags>
-        <tag>信号与系统</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>傅里叶级数与傅里叶变换</title>
     <url>/2021/07/19/%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/</url>
     <content><![CDATA[<p><strong>傅里叶变换能够将信号从时域变换到频域，使对信号的分析更加容易</strong></p>
@@ -376,56 +268,111 @@ F(\omega)
       </tags>
   </entry>
   <entry>
-    <title>希尔伯特变换</title>
-    <url>/2021/07/19/%E5%B8%8C%E5%B0%94%E4%BC%AF%E7%89%B9%E5%8F%98%E6%8D%A2/</url>
-    <content><![CDATA[<p><strong>希尔伯特变换能改变信号的相位</strong></p>
+    <title>信号与系统</title>
+    <url>/2021/07/20/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p><strong>介绍了信号的分类、典型信号、信号的运算、信号的分解、系统的分类</strong></p>
 <span id="more"></span>
-<h1 id="希尔伯特变换">希尔伯特变换</h1>
+<h1 id="信号">信号</h1>
 <hr />
-<h3 id="希尔伯特正变换">希尔伯特正变换</h3>
+<h2 id="信号的分类">信号的分类</h2>
 <ul>
-<li><p><strong>时域：</strong> <span class="math display">\[\hat{f}(t)=\mathscr{H}[f(t)]=f(t)*\frac{1}{\pi t}=\frac{1}{\pi}\int_{-\infty}^{+\infty}\frac{f(\tau)}{t-\tau}d\tau\]</span></p></li>
-<li><p><strong>频域：</strong> <span class="math display">\[\begin{aligned}
-\hat{F}(\omega)
-&amp; =F(\omega)\cdot[-jsgn(\omega)] \\
-&amp; =\left\{
-  \begin{align*}
-  &amp; -jF(\omega) \qquad \omega&gt;0 \\
-  &amp; +jF(\omega) \qquad \omega&lt;0
-  \end{align*}\right.
-\end{aligned}\]</span></p></li>
-<li><p><strong>意义：</strong> <span class="math inline">\(信号经过希尔伯特变换后相位滞后\frac{\pi}{2}，如: \\ \mathscr{H}[cos(\omega_0t)]=cos(\omega_0t-\frac{\pi}{2})=sin(\omega_0t)\)</span></p></li>
+<li><strong>连续信号和离散信号</strong></li>
+<li><strong>周期信号和非周期信号：</strong> 周期信号不一定有最小周期，例如：<span class="math inline">\(f(t)=A\)</span></li>
+<li><strong>能量信号和功率信号：</strong> 一个信号如果不是能量信号可能是功率信号，但是如果一个信号既不是能量信号也不是功率信号那么这个信号是<strong>功率无限信号</strong> 例如：<span class="math inline">\(f(t)=e^t\)</span></li>
+<li><strong>确定信号和随机信号：</strong> 确定信号：能给出确定的<span class="math inline">\(f(t)\)</span>的表达式 随机信号：只能知道信号可能的取值，具体的取值不确定</li>
 </ul>
 <hr />
-<h3 id="希尔伯特反变换">希尔伯特反变换</h3>
+<h2 id="典型的信号">典型的信号</h2>
 <ul>
-<li><p><strong>时域：</strong> <span class="math display">\[f(t)=\mathscr{H}^{-1}[\hat{f}(t)]=\hat{f}(t)*-\frac{1}{\pi t}=-\frac{1}{\pi}\int_{-\infty}^{+\infty}\frac{\hat{f}(\tau)}{t-\tau}d\tau\]</span></p></li>
-<li><p><strong>频域：</strong> <span class="math display">\[\begin{aligned}
-F(\omega)
-&amp; =\hat{F}(\omega)\cdot jsgn(\omega) \\
-&amp; =\left\{
-  \begin{align*}
-  &amp; +j\hat{F}(\omega) \qquad \omega&gt;0 \\
-  &amp; -j\hat{F}(\omega) \qquad \omega&lt;0
-  \end{align*}\right.
-\end{aligned}\]</span></p></li>
-<li><p><strong>意义：</strong> <span class="math inline">\(信号经过希尔伯特反变换后相位超前\frac{\pi}{2}，如: \\ \mathscr{H}[cos(\omega_0t)]=cos(\omega_0t+\frac{\pi}{2})=-sin(\omega_0t)\)</span></p></li>
+<li><strong>指数信号：</strong> <span class="math display">\[f(t)=Ke^{-at}\quad t&gt;0\]</span></li>
+<li><strong>正弦信号：</strong> <span class="math display">\[f(t)=Ksin(\omega t+\theta)\]</span></li>
+<li><strong>复指数信号：</strong> <span class="math display">\[f(t)=Ke^{(\sigma+j\omega)t}=Ke^{\sigma t}cos(\omega t)+jKe^{\sigma t}sin(\omega t)\]</span></li>
+<li><strong>抽样信号：</strong> <span class="math display">\[Sa(t)=\frac{sin(t)}{t}\]</span></li>
+</ul>
+<p><span class="math display">\[\int_{-\infty}^{+\infty}Sa(t)dt=\pi\]</span></p>
+<p><span class="math display">\[sinc(t)=Sa(\pi t)=\frac{sin(\pi t)}{\pi t}\]</span></p>
+<hr />
+<h2 id="信号的运算">信号的运算</h2>
+<ul>
+<li><strong>移位、反褶、尺度变换</strong><br />
+移位：<span class="math inline">\(f(t)\rightarrow f(t\pm t_0)\)</span>，左加右减<br />
+反褶：<span class="math inline">\(f(t)\rightarrow f(-t)\)</span><br />
+尺度变换：<span class="math inline">\(f(t)\rightarrow f(at)\)</span><br />
+</li>
+<li><p><strong>微分、积分</strong><br />
+<font color=red>注意：跳变点微分之后会出现冲击，微分和积分不具有可逆性。</font><br />
+<span class="math display">\[\frac{d}{dt}\left[\int_{-\infty}^tf(\tau)d\tau\right]=f(t) \quad \int_{-\infty}^t\left[\frac{d}{d\tau}f(\tau)\right]d\tau\neq f(t)\]</span></p></li>
+<li><p><strong>相乘、相加</strong><br />
+<font color=red>注意：信号相乘或相加就是对应点相乘或相加。</font></p></li>
 </ul>
 <hr />
-<h3 id="希尔伯特约束关系">希尔伯特约束关系</h3>
-<p><span class="math inline">\(因果系统系统函数H(\omega)的实部与虚部满足希尔伯特变换约束关系，即：\)</span></p>
-<p><span class="math inline">\(因果系统：\)</span> <span class="math display">\[\begin{align*}
-&amp; h(t)=h(t)u(t) \\
-&amp; H(\omega)=R(\omega)+jX(\omega)
-\end{align*}\]</span></p>
-<p><span class="math inline">\(希尔伯特约束关系：\)</span> <span class="math display">\[\begin{align*}
-&amp; R(\omega)=\mathscr{H}[X(\omega)]=X(\omega)*\frac{1}{\pi\omega}=\frac{1}{\pi}\int_{-\infty}^{+\infty}\frac{X(\Omega)}{\omega-\Omega}d\Omega \\
-&amp; X(\omega)=\mathscr{H}^{-1}[R(\omega)]=R(\omega)*-\frac{1}{\pi\omega}=-\frac{1}{\pi}\int_{-\infty}^{+\infty}\frac{R(\Omega)}{\omega-\Omega}d\Omega 
-\end{align*}\]</span></p>
+<h2 id="信号的分解">信号的分解</h2>
+<ul>
+<li><p><strong>直流分量和交流分量</strong> <span class="math display">\[f(t)=f_D+f_A(t)\]</span></p>
+<p><span class="math display">\[f_D=\lim_{T\rightarrow\infty}\frac{1}{T}\int_{-T/2}^{T/2}f(t)dt \qquad \int_{-\infty}^{+\infty}f_A(t)dt=0\]</span></p>
+<p><span class="math display">\[
+  \begin{align*}
+  P
+  &amp; =\frac{1}{T}\int_{-T/2}^{T/2}f^2(t)dt=\frac{1}{T}\int_{-T/2}^{T/2}[f_D+f_A(t)]^2dt \\
+  &amp; =f_D^2+\frac{1}{T}\int_{-T/2}^{T/2}f_A^2(t)dt
+  \end{align*}
+  \]</span></p></li>
+<li><p><strong>奇分量和偶分量</strong> <span class="math display">\[f(t)=f_e(t)+f_o(t)\]</span></p>
+<p>其中：<span class="math inline">\(f_e(t)\)</span>是偶分量，<span class="math inline">\(f_o(t)\)</span>是奇分量</p>
+<p><span class="math display">\[f_e(t)=\frac{1}{2}[f(t)+f(-t)] \qquad f_o(t)=\frac{1}{2}[f(t)-f(-t)]\]</span></p></li>
+<li><p><strong>实部和虚部</strong> <span class="math display">\[f(t)=f_r(t)+jf_i(t)\]</span></p>
+<p><span class="math display">\[f^*(t)=f_r(t)-jf_i(t)\]</span></p>
+<p>其中：<span class="math inline">\(f_r(t)=\frac{1}{2}[f(t)+f^*(t)] \qquad f_i(t)=\frac{1}{2j}[f(t)-f^*(t)]\)</span></p></li>
+<li><p><strong>脉冲分量</strong> <span class="math display">\[
+  \begin{align*}
+  f(t)
+  &amp; =\lim_{\Delta\tau\rightarrow0}\sum_{\tau=-\infty}^{+\infty}f(\tau)[u(t-\tau)-u(t-\tau-\Delta\tau)] \\
+  &amp; =\lim_{\Delta\tau\rightarrow0}\sum_{\tau=-\infty}^{+\infty}f(\tau)\frac{[u(t-\tau)-u(t-\tau-\Delta\tau)]}{\Delta\tau}\Delta\tau \\
+  &amp; =\int_{-\infty}^{+\infty}f(\tau)\delta(t-\tau)d\tau
+  \end{align*}
+  \]</span></p></li>
+</ul>
+<hr />
+<h1 id="系统">系统</h1>
+<hr />
+<h2 id="系统的分类">系统的分类</h2>
+<ul>
+<li>连续时间系统与离散时间系统</li>
+<li>线性系统与非线性系统</li>
+<li>时变系统与时不变系统</li>
+<li>可逆系统与不可逆系统</li>
+<li>因果系统与非因果系统</li>
+</ul>
+<h2 id="线性时不变系统">线性时不变系统</h2>
+<h3 id="叠加性与均匀性">叠加性与均匀性</h3>
+<p><strong>规则：线系统后叠加 <span class="math inline">\(\substack{?\\=}\)</span> 先叠加后系统</strong><br />
+系统模型：<span class="math inline">\(r(t)=f[e(t)]\)</span><br />
+先系统后叠加：<span class="math inline">\(a_1f[e_1(t)]+a_2f[e_2(t)]\)</span><br />
+先叠加后系统：<span class="math inline">\(f[a_1e_1(t)+a_2e_2(t)]\)</span><br />
+判断：<span class="math inline">\(f[a_1e_1(t)+a_2e_2(t)]\substack{?\\=}a_1f[e_1(t)]+a_2f[e_2(t)]\)</span><br />
+典型非线性系统：<span class="math inline">\(r(t)=e^2(t) \qquad r(t)=e(t)+A\)</span></p>
+<h3 id="时不变特性">时不变特性</h3>
+<p><strong>规则：线系统后延时 <span class="math inline">\(\substack{?\\=}\)</span> 先延时后系统</strong><br />
+系统模型：<span class="math inline">\(r(t)=f[e(t)]\)</span><br />
+先系统后延时：<span class="math inline">\(r(t-t_0)\)</span><br />
+先延时后系统：<span class="math inline">\(f[e(t-t_0)]\)</span><br />
+判断：<span class="math inline">\(r(t-t_0)\substack{?\\=}f[e(t-t_0)]\)</span><br />
+典型时变系统：<span class="math inline">\(r(t)=te(t) \quad r(t)=t+e(t) \quad r(t)=e(at),a\neq1\)</span></p>
+<h3 id="因果性">因果性</h3>
+<p><strong>规则：输出与未来的输入值无关</strong><br />
+典型非因果系统：<span class="math inline">\(r(t)=e(-t) \qquad r(t)=e(2t)\)</span><br />
+<font color=red>注意：<span class="math inline">\(r(t)=cos(t+5)e(t)\)</span>为因果</font></p>
+<h3 id="即时性动态性">即时性（动态性）</h3>
+<p><strong>规则：当前输出仅仅与当前输入有关</strong><br />
+典型动态系统：微积分系统，非因果系统</p>
+<h3 id="微分特性">微分特性</h3>
+<p><strong>规则：输入微分则输出也微分</strong></p>
+<h3 id="可逆系统">可逆系统</h3>
+<p><strong>规则：不存在多个输入对应一个输出</strong></p>
+<hr />
 ]]></content>
       <tags>
         <tag>信号与系统</tag>
-        <tag>希尔伯特变换</tag>
       </tags>
   </entry>
   <entry>
@@ -622,6 +569,59 @@ F(\omega)
       <tags>
         <tag>信号与系统</tag>
         <tag>拉普拉斯变换</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>希尔伯特变换</title>
+    <url>/2021/07/19/%E5%B8%8C%E5%B0%94%E4%BC%AF%E7%89%B9%E5%8F%98%E6%8D%A2/</url>
+    <content><![CDATA[<p><strong>希尔伯特变换能改变信号的相位</strong></p>
+<span id="more"></span>
+<h1 id="希尔伯特变换">希尔伯特变换</h1>
+<hr />
+<h3 id="希尔伯特正变换">希尔伯特正变换</h3>
+<ul>
+<li><p><strong>时域：</strong> <span class="math display">\[\hat{f}(t)=\mathscr{H}[f(t)]=f(t)*\frac{1}{\pi t}=\frac{1}{\pi}\int_{-\infty}^{+\infty}\frac{f(\tau)}{t-\tau}d\tau\]</span></p></li>
+<li><p><strong>频域：</strong> <span class="math display">\[\begin{aligned}
+\hat{F}(\omega)
+&amp; =F(\omega)\cdot[-jsgn(\omega)] \\
+&amp; =\left\{
+  \begin{align*}
+  &amp; -jF(\omega) \qquad \omega&gt;0 \\
+  &amp; +jF(\omega) \qquad \omega&lt;0
+  \end{align*}\right.
+\end{aligned}\]</span></p></li>
+<li><p><strong>意义：</strong> <span class="math inline">\(信号经过希尔伯特变换后相位滞后\frac{\pi}{2}，如: \\ \mathscr{H}[cos(\omega_0t)]=cos(\omega_0t-\frac{\pi}{2})=sin(\omega_0t)\)</span></p></li>
+</ul>
+<hr />
+<h3 id="希尔伯特反变换">希尔伯特反变换</h3>
+<ul>
+<li><p><strong>时域：</strong> <span class="math display">\[f(t)=\mathscr{H}^{-1}[\hat{f}(t)]=\hat{f}(t)*-\frac{1}{\pi t}=-\frac{1}{\pi}\int_{-\infty}^{+\infty}\frac{\hat{f}(\tau)}{t-\tau}d\tau\]</span></p></li>
+<li><p><strong>频域：</strong> <span class="math display">\[\begin{aligned}
+F(\omega)
+&amp; =\hat{F}(\omega)\cdot jsgn(\omega) \\
+&amp; =\left\{
+  \begin{align*}
+  &amp; +j\hat{F}(\omega) \qquad \omega&gt;0 \\
+  &amp; -j\hat{F}(\omega) \qquad \omega&lt;0
+  \end{align*}\right.
+\end{aligned}\]</span></p></li>
+<li><p><strong>意义：</strong> <span class="math inline">\(信号经过希尔伯特反变换后相位超前\frac{\pi}{2}，如: \\ \mathscr{H}[cos(\omega_0t)]=cos(\omega_0t+\frac{\pi}{2})=-sin(\omega_0t)\)</span></p></li>
+</ul>
+<hr />
+<h3 id="希尔伯特约束关系">希尔伯特约束关系</h3>
+<p><span class="math inline">\(因果系统系统函数H(\omega)的实部与虚部满足希尔伯特变换约束关系，即：\)</span></p>
+<p><span class="math inline">\(因果系统：\)</span> <span class="math display">\[\begin{align*}
+&amp; h(t)=h(t)u(t) \\
+&amp; H(\omega)=R(\omega)+jX(\omega)
+\end{align*}\]</span></p>
+<p><span class="math inline">\(希尔伯特约束关系：\)</span> <span class="math display">\[\begin{align*}
+&amp; R(\omega)=\mathscr{H}[X(\omega)]=X(\omega)*\frac{1}{\pi\omega}=\frac{1}{\pi}\int_{-\infty}^{+\infty}\frac{X(\Omega)}{\omega-\Omega}d\Omega \\
+&amp; X(\omega)=\mathscr{H}^{-1}[R(\omega)]=R(\omega)*-\frac{1}{\pi\omega}=-\frac{1}{\pi}\int_{-\infty}^{+\infty}\frac{R(\Omega)}{\omega-\Omega}d\Omega 
+\end{align*}\]</span></p>
+]]></content>
+      <tags>
+        <tag>信号与系统</tag>
+        <tag>希尔伯特变换</tag>
       </tags>
   </entry>
 </search>
