@@ -116,7 +116,11 @@
 <h1 id="傅里叶级数">傅里叶级数</h1>
 <hr />
 <h2 id="狄利克雷条件">狄利克雷条件：</h2>
-<p><span class="math inline">\(f(t)是以T为周期的可积函数，如果在某个周期上满足：\)</span> * <span class="math inline">\(连续或只有有限个第一类间断点\)</span> * <span class="math inline">\(至多只有有限个极值点\)</span></p>
+<p><span class="math inline">\(f(t)是以T为周期的可积函数，如果在某个周期上满足：\)</span></p>
+<ul>
+<li><span class="math inline">\(连续或只有有限个第一类间断点\)</span></li>
+<li><span class="math inline">\(至多只有有限个极值点\)</span></li>
+</ul>
 <hr />
 <h2 id="三角函数形式展开">三角函数形式展开：</h2>
 <p><span class="math display">\[f(t)=a_0+\sum_{n=1}^{\infty}(a_ncosn\omega_1t+b_nsinn\omega_1t)\]</span></p>
@@ -151,11 +155,16 @@
 <h1 id="傅里叶变换">傅里叶变换</h1>
 <hr />
 <h2 id="傅里叶变换的引出">傅里叶变换的引出</h2>
-<p><span class="math inline">\(周期为T的信号f(t)的指数形式的傅里叶级数为：\)</span> <span class="math display">\[f(t)=\sum_{n=-\infty}^{+\infty}F(n\omega_1)e^{jn\omega_1t}\]</span></p>
+<p><span class="math inline">\(周期为T的信号f(t)的指数形式的傅里叶级数为：\)</span><br />
+<span class="math display">\[f(t)=\sum_{n=-\infty}^{+\infty}F(n\omega_1)e^{jn\omega_1t}\]</span></p>
 <p><span class="math display">\[F(n\omega_1)=\frac{1}{T}\int_{-T/2}^{T/2}f(t)e^{-jn\omega_1t}dt\]</span></p>
-<p><strong>傅里叶正变换：</strong> <span class="math inline">\(若f(t)为非周期信号，则f(t)的周期可看做为\infty，即T\rightarrow\infty\)</span> <span class="math inline">\(定义频谱密度函数：\)</span> <span class="math display">\[F(\omega)=\lim_{T\rightarrow\infty}TF(n\omega_1)\]</span></p>
+<p><strong>傅里叶正变换：</strong><br />
+<span class="math inline">\(若f(t)为非周期信号，则f(t)的周期可看做为\infty，即T\rightarrow\infty\)</span><br />
+<span class="math inline">\(定义频谱密度函数：\)</span><br />
+<span class="math display">\[F(\omega)=\lim_{T\rightarrow\infty}TF(n\omega_1)\]</span></p>
 <p><span class="math display">\[F(\omega)=\lim_{T\rightarrow\infty}\int_{-T/2}^{T/2}f(t)e^{-jn\omega_1t}dt\]</span></p>
-<p><span class="math inline">\(当T\rightarrow\infty时，\Delta(n\omega_1)=\omega_1\rightarrow d\omega，(n\omega_1)\rightarrow\omega，所以：\)</span> <span class="math display">\[F(\omega)=\int_{-\infty}^{+\infty}f(t)e^{-j\omega t}dt\]</span></p>
+<p><span class="math inline">\(当T\rightarrow\infty时，\Delta(n\omega_1)=\omega_1\rightarrow d\omega，(n\omega_1)\rightarrow\omega，所以：\)</span><br />
+<span class="math display">\[F(\omega)=\int_{-\infty}^{+\infty}f(t)e^{-j\omega t}dt\]</span></p>
 <p><strong>傅里叶逆变换：</strong> <span class="math display">\[\begin{align*}
 f(t)
 &amp; =\sum_{n=-\infty}^{+\infty}F(n\omega_1)e^{jn\omega_1t} \\
@@ -622,6 +631,72 @@ F(\omega)
       <tags>
         <tag>信号与系统</tag>
         <tag>拉普拉斯变换</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Z变换</title>
+    <url>/2021/08/18/%E7%A6%BB%E6%95%A3%E4%BF%A1%E5%8F%B7%E4%B8%8EZ%E5%8F%98%E6%8D%A2/</url>
+    <content><![CDATA[<p><strong>Z变换用于研究离散时间信号与系统</strong> <span id="more"></span></p>
+<h1 id="差分方程特解">差分方程特解</h1>
+<p>线性时不变系统输入与输出有相同的形式</p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math display">\[输入x(n)\]</span></th>
+<th><span class="math display">\[输出y(n)\]</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math display">\[e^{an}\]</span></td>
+<td><span class="math display">\[Ae^{an}\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\cos\omega n\]</span></td>
+<td><span class="math display">\[A\cos(\omega n)+B\sin(\omega n)\]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\sin\omega n\]</span></td>
+<td><span class="math display">\[A\cos(\omega n)+B\sin(\omega n)\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[n^k\]</span></td>
+<td><span class="math display">\[A_kn^k+A_{k-1}n^{k-1}+\cdots+A_1n+A_0\]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[A\]</span></td>
+<td><span class="math display">\[C\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[r^n\]</span></td>
+<td><span class="math display">\[Cr^n\]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[r^n（r与特征根重）\]</span></td>
+<td><span class="math display">\[(C_1n+C_2)r^n\]</span></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="z变换的导出">Z变换的导出</h1>
+<p><span class="math inline">\(抽样信号的拉式变换\rightarrow离散信号的Z变换\)</span> <span class="math inline">\(信号的理想抽样：\)</span> <span class="math display">\[\begin{align*}
+x_s(t) &amp; =x(t)\cdot\delta_T(t) \\
+&amp; = x(t)\sum_{n=-\infty}^{\infty}\delta(t-nT) \\ 
+&amp; =\sum_{n=-\infty}^{\infty}x(nT)\delta(t-nT) \\
+\end{align*}\]</span></p>
+<p><span class="math inline">\(对x_s(t)取拉氏变换：\)</span> <span class="math display">\[\begin{align*}
+X_s(s) 
+&amp; =\mathscr{L}[x_s(t)]=\mathscr{L}\left[\sum_{n=-\infty}^{\infty}x(nT)\delta(t-nT)\right] \\
+&amp; =\sum_{n=-\infty}^{\infty}x(nT)\mathscr{L}[\delta(t-nT)] \\
+&amp; =\sum_{n=-\infty}^{\infty}x(nT)e^{-snT}
+\end{align*}\]</span></p>
+<p><span class="math inline">\(引入复变量：z=e^{sT}，令T=1，x(nT)=x(n)：\)</span> <span class="math display">\[\left.X_s(s)\right|_{z=e^{sT}}=\sum_{n=-\infty}^{\infty}x(n)z^{-n}=X(z)\]</span></p>
+<p><span class="math inline">\(对任一信号x(n)的（双边）z变换式为：\)</span> <span class="math display">\[X(z)=\sum_{n=-\infty}^{\infty}x(n)z^{-n}\]</span></p>
+<hr />
+]]></content>
+      <tags>
+        <tag>信号与系统</tag>
+        <tag>Z变换</tag>
       </tags>
   </entry>
 </search>
