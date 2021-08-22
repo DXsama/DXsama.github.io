@@ -642,38 +642,38 @@ F(\omega)
 <table>
 <thead>
 <tr class="header">
-<th>输入<span class="math inline">\(x(n)\)</span></th>
-<th>输出<span class="math inline">\(y(n)\)</span></th>
+<th style="text-align: center;">输入<span class="math inline">\(x(n)\)</span></th>
+<th style="text-align: center;">输出<span class="math inline">\(y(n)\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math display">\[e^{an}\]</span></td>
-<td><span class="math display">\[Ae^{an}\]</span></td>
+<td style="text-align: center;"><span class="math display">\[e^{an}\]</span></td>
+<td style="text-align: center;"><span class="math display">\[Ae^{an}\]</span></td>
 </tr>
 <tr class="even">
-<td><span class="math display">\[\cos\omega n\]</span></td>
-<td><span class="math display">\[A\cos(\omega n)+B\sin(\omega n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\cos\omega n\]</span></td>
+<td style="text-align: center;"><span class="math display">\[A\cos(\omega n)+B\sin(\omega n)\]</span></td>
 </tr>
 <tr class="odd">
-<td><span class="math display">\[\sin\omega n\]</span></td>
-<td><span class="math display">\[A\cos(\omega n)+B\sin(\omega n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\sin\omega n\]</span></td>
+<td style="text-align: center;"><span class="math display">\[A\cos(\omega n)+B\sin(\omega n)\]</span></td>
 </tr>
 <tr class="even">
-<td><span class="math display">\[n^k\]</span></td>
-<td><span class="math display">\[A_kn^k+A_{k-1}n^{k-1}+\cdots+A_1n+A_0\]</span></td>
+<td style="text-align: center;"><span class="math display">\[n^k\]</span></td>
+<td style="text-align: center;"><span class="math display">\[A_kn^k+A_{k-1}n^{k-1}+\cdots+A_1n+A_0\]</span></td>
 </tr>
 <tr class="odd">
-<td><span class="math display">\[A\]</span></td>
-<td><span class="math display">\[C\]</span></td>
+<td style="text-align: center;"><span class="math display">\[A\]</span></td>
+<td style="text-align: center;"><span class="math display">\[C\]</span></td>
 </tr>
 <tr class="even">
-<td><span class="math display">\[r^n\]</span></td>
-<td><span class="math display">\[Cr^n\]</span></td>
+<td style="text-align: center;"><span class="math display">\[r^n\]</span></td>
+<td style="text-align: center;"><span class="math display">\[Cr^n\]</span></td>
 </tr>
 <tr class="odd">
-<td><span class="math display">\[r^n（r与特征根重）\]</span></td>
-<td><span class="math display">\[(C_1n+C_2)r^n\]</span></td>
+<td style="text-align: center;"><span class="math display">\[r^n（r与特征根重）\]</span></td>
+<td style="text-align: center;"><span class="math display">\[(C_1n+C_2)r^n\]</span></td>
 </tr>
 </tbody>
 </table>
@@ -701,50 +701,50 @@ X_s(s)
 </colgroup>
 <thead>
 <tr class="header">
-<th>序列<span class="math inline">\(x(n)\)</span></th>
-<th>Z变换<span class="math inline">\(（\lvert z\rvert&gt;\lvert a\rvert）\)</span></th>
+<th style="text-align: center;">序列<span class="math inline">\(x(n)\)</span></th>
+<th style="text-align: center;">Z变换<span class="math inline">\((\lvert z\rvert&gt;\lvert a\rvert)\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math display">\[\delta(n)\]</span></td>
-<td><span class="math display">\[1\qquad \lvert z\rvert&gt;0\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\delta(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[1\qquad \lvert z\rvert&gt;0\]</span></td>
 </tr>
 <tr class="even">
-<td><span class="math display">\[u(n)\]</span></td>
-<td><span class="math display">\[\frac{z}{z-1}\qquad \lvert z\rvert&gt;1\]</span></td>
+<td style="text-align: center;"><span class="math display">\[u(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\frac{z}{z-1}\qquad \lvert z\rvert&gt;1\]</span></td>
 </tr>
 <tr class="odd">
-<td><span class="math display">\[nu(n)\]</span></td>
-<td><span class="math display">\[\frac{z}{(z-1)^2}\qquad \lvert z\rvert&gt;1\]</span></td>
+<td style="text-align: center;"><span class="math display">\[nu(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\frac{z}{(z-1)^2}\qquad \lvert z\rvert&gt;1\]</span></td>
 </tr>
 <tr class="even">
-<td><span class="math display">\[a^nu(n)\]</span></td>
-<td><span class="math display">\[\frac{z}{z-a}\qquad \lvert z\rvert&gt;\lvert a\rvert\]</span></td>
+<td style="text-align: center;"><span class="math display">\[a^nu(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\frac{z}{z-a}\qquad \lvert z\rvert&gt;\lvert a\rvert\]</span></td>
 </tr>
 <tr class="odd">
-<td><span class="math display">\[\sin(n\omega_0)\]</span></td>
-<td><span class="math display">\[\frac{z\sin\omega_0}{z^2-2z\cos\omega_0+1}\qquad \lvert z\rvert&gt;1\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\sin(n\omega_0)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\frac{z\sin\omega_0}{z^2-2z\cos\omega_0+1}\qquad \lvert z\rvert&gt;1\]</span></td>
 </tr>
 <tr class="even">
-<td><span class="math display">\[\cos(n\omega_0)\]</span></td>
-<td><span class="math display">\[\frac{z(z-\cos\omega_0)}{z^2-2z\cos\omega_0+1}\qquad \lvert z\rvert&gt;1\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\cos(n\omega_0)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\frac{z(z-\cos\omega_0)}{z^2-2z\cos\omega_0+1}\qquad \lvert z\rvert&gt;1\]</span></td>
 </tr>
 <tr class="odd">
-<td><span class="math display">\[\beta^n\sin(n\omega_0)\]</span></td>
-<td><span class="math display">\[\frac{\beta z\sin\omega_0}{z^2-2\beta z\cos\omega_0+\beta^2}\qquad \lvert z\rvert&gt;\beta\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\beta^n\sin(n\omega_0)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\frac{\beta z\sin\omega_0}{z^2-2\beta z\cos\omega_0+\beta^2}\qquad \lvert z\rvert&gt;\beta\]</span></td>
 </tr>
 <tr class="even">
-<td><span class="math display">\[\beta^n\cos(n\omega_0)\]</span></td>
-<td><span class="math display">\[\frac{z(z-\beta\cos\omega_0)}{z^2-2\beta z\cos\omega_0+\beta^2}\qquad \lvert z\rvert&gt;\beta\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\beta^n\cos(n\omega_0)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\frac{z(z-\beta\cos\omega_0)}{z^2-2\beta z\cos\omega_0+\beta^2}\qquad \lvert z\rvert&gt;\beta\]</span></td>
 </tr>
 <tr class="odd">
-<td><span class="math display">\[\sinh(n\omega_0)\]</span></td>
-<td><span class="math display">\[\frac{z\sinh\omega_0}{z^2-2z\cosh\omega_0+1}\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\sinh(n\omega_0)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\frac{z\sinh\omega_0}{z^2-2z\cosh\omega_0+1}\]</span></td>
 </tr>
 <tr class="even">
-<td><span class="math display">\[\cosh(n\omega_0)\]</span></td>
-<td><span class="math display">\[\frac{z(z-\cosh\omega_0)}{z^2-2z\cosh\omega_0+1}\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\cosh(n\omega_0)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\frac{z(z-\cosh\omega_0)}{z^2-2z\cosh\omega_0+1}\]</span></td>
 </tr>
 </tbody>
 </table>
@@ -758,54 +758,54 @@ X_s(s)
 </colgroup>
 <thead>
 <tr class="header">
-<th>性质</th>
-<th>序列<span class="math inline">\(x(n)\)</span></th>
-<th>Z变换<span class="math inline">\(X(z)\)</span></th>
-<th></th>
+<th style="text-align: center;">性质</th>
+<th style="text-align: center;">序列<span class="math inline">\(x(n)\)</span></th>
+<th style="text-align: center;">Z变换<span class="math inline">\(X(z)\)</span></th>
+<th style="text-align: center;"></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math display">\[线性性质\]</span></td>
-<td><span class="math display">\[ax_1(n)+bx_2(n)\]</span></td>
-<td><span class="math display">\[aX_1(z)+bX_2(z)\]</span></td>
-<td></td>
+<td style="text-align: center;"><span class="math display">\[线性性质\]</span></td>
+<td style="text-align: center;"><span class="math display">\[ax_1(n)+bx_2(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[aX_1(z)+bX_2(z)\]</span></td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="even">
-<td><span class="math display">\[位移性质（双边z变换）\]</span></td>
-<td><span class="math display">\[x(n\pm m)\]</span></td>
-<td><span class="math display">\[z^{\pm m}X(z)\]</span></td>
-<td></td>
+<td style="text-align: center;"><span class="math display">\[位移性质（双边z变换）\]</span></td>
+<td style="text-align: center;"><span class="math display">\[x(n\pm m)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[z^{\pm m}X(z)\]</span></td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
-<td><span class="math display">\[位移性质（单边z变换）\]</span></td>
-<td><span class="math display">\[x(n+m)u(n)\]</span> <span class="math display">\[x(n-m)u(n)\]</span></td>
-<td><span class="math display">\[z^m[X(z)-\sum_{k=0}^{m-1}x(k)z^{-k}]\]</span><span class="math display">\[z^{-m}[X(z)+\sum_{k=-m}^{-1}x(k)z^{-k}]\]</span></td>
-<td></td>
+<td style="text-align: center;"><span class="math display">\[位移性质（单边z变换）\]</span></td>
+<td style="text-align: center;"><span class="math display">\[x(n+m)u(n)\]</span> <span class="math display">\[x(n-m)u(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[z^m[X(z)-\sum_{k=0}^{m-1}x(k)z^{-k}]\]</span><span class="math display">\[z^{-m}[X(z)+\sum_{k=-m}^{-1}x(k)z^{-k}]\]</span></td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="even">
-<td><span class="math display">\[序列线性加权（z域微分）\]</span></td>
-<td><span class="math display">\[n^mx(n)\]</span></td>
-<td><span class="math display">\[\left[-z\frac{d}{dz}\right]^mX(z)\]</span></td>
-<td></td>
+<td style="text-align: center;"><span class="math display">\[序列线性加权（z域微分）\]</span></td>
+<td style="text-align: center;"><span class="math display">\[n^mx(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\left[-z\frac{d}{dz}\right]^mX(z)\]</span></td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
-<td><span class="math display">\[序列指数加权（z域尺度变换）\]</span></td>
-<td><span class="math display">\[a^nx(n)\]</span></td>
-<td><span class="math display">\[X\left(\frac{z}{a}\right)\quad (R_{x1}&lt;\lvert\frac{z}{a}\rvert&lt;R_{x2})\]</span></td>
-<td></td>
+<td style="text-align: center;"><span class="math display">\[序列指数加权（z域尺度变换）\]</span></td>
+<td style="text-align: center;"><span class="math display">\[a^nx(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[X\left(\frac{z}{a}\right)\quad (R_{x1}&lt;\lvert\frac{z}{a}\rvert&lt;R_{x2})\]</span></td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="even">
-<td><span class="math display">\[z域积分\]</span></td>
-<td><span class="math display">\[\frac{x(n)}{n+m}\]</span></td>
-<td><span class="math display">\[z^m\int_{z}^{\infty}k^{-(m+1)}X(k)dk\]</span></td>
-<td></td>
+<td style="text-align: center;"><span class="math display">\[z域积分\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\frac{x(n)}{n+m}\]</span></td>
+<td style="text-align: center;"><span class="math display">\[z^m\int_{z}^{\infty}k^{-(m+1)}X(k)dk\]</span></td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
-<td><span class="math display">\[时域卷积定理\]</span></td>
-<td><span class="math display">\[x(n)\ast h(n)\]</span></td>
-<td><span class="math display">\[X(z)H(z)\quad\max(R_{x1},R_{h1})&lt;\lvert z\rvert&lt;\min(R_{x2},R_{h2})\]</span></td>
-<td></td>
+<td style="text-align: center;"><span class="math display">\[时域卷积定理\]</span></td>
+<td style="text-align: center;"><span class="math display">\[x(n)\ast h(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[X(z)H(z)\quad\max(R_{x1},R_{h1})&lt;\lvert z\rvert&lt;\min(R_{x2},R_{h2})\]</span></td>
+<td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
