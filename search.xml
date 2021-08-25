@@ -438,206 +438,6 @@ F(\omega)
       </tags>
   </entry>
   <entry>
-    <title>Z变换</title>
-    <url>/2021/08/18/%E7%A6%BB%E6%95%A3%E4%BF%A1%E5%8F%B7%E4%B8%8EZ%E5%8F%98%E6%8D%A2/</url>
-    <content><![CDATA[<p><strong>Z变换用于研究离散时间信号与系统</strong> <span id="more"></span></p>
-<h1 id="差分方程特解">差分方程特解</h1>
-<p>线性时不变系统输入与输出有相同的形式</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">输入<span class="math inline">\(x(n)\)</span></th>
-<th style="text-align: center;">输出<span class="math inline">\(y(n)\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><span class="math display">\[e^{an}\]</span></td>
-<td style="text-align: center;"><span class="math display">\[Ae^{an}\]</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math display">\[\cos\omega n\]</span></td>
-<td style="text-align: center;"><span class="math display">\[A\cos(\omega n)+B\sin(\omega n)\]</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math display">\[\sin\omega n\]</span></td>
-<td style="text-align: center;"><span class="math display">\[A\cos(\omega n)+B\sin(\omega n)\]</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math display">\[n^k\]</span></td>
-<td style="text-align: center;"><span class="math display">\[A_kn^k+A_{k-1}n^{k-1}+\cdots+A_1n+A_0\]</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math display">\[A\]</span></td>
-<td style="text-align: center;"><span class="math display">\[C\]</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math display">\[r^n\]</span></td>
-<td style="text-align: center;"><span class="math display">\[Cr^n\]</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math display">\[r^n（r与特征根重）\]</span></td>
-<td style="text-align: center;"><span class="math display">\[(C_1n+C_2)r^n\]</span></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h1 id="z变换的导出">Z变换的导出</h1>
-<p><span class="math inline">\(抽样信号的拉式变换\rightarrow离散信号的Z变换\)</span> <span class="math inline">\(信号的理想抽样：\)</span> <span class="math display">\[\begin{align*}
-x_s(t) &amp; =x(t)\cdot\delta_T(t) \\
-&amp; = x(t)\sum_{n=-\infty}^{\infty}\delta(t-nT) \\ 
-&amp; =\sum_{n=-\infty}^{\infty}x(nT)\delta(t-nT) \\
-\end{align*}\]</span></p>
-<p><span class="math inline">\(对x_s(t)取拉氏变换：\)</span> <span class="math display">\[\begin{align*}
-X_s(s) 
-&amp; =\mathscr{L}[x_s(t)]=\mathscr{L}\left[\sum_{n=-\infty}^{\infty}x(nT)\delta(t-nT)\right] \\
-&amp; =\sum_{n=-\infty}^{\infty}x(nT)\mathscr{L}[\delta(t-nT)] \\
-&amp; =\sum_{n=-\infty}^{\infty}x(nT)e^{-snT}
-\end{align*}\]</span></p>
-<p><span class="math inline">\(引入复变量：z=e^{sT}，令T=1，x(nT)=x(n)：\)</span> <span class="math display">\[\left.X_s(s)\right|_{z=e^{sT}}=\sum_{n=-\infty}^{\infty}x(n)z^{-n}=X(z)\]</span></p>
-<p><span class="math inline">\(对任一信号x(n)的（双边）z变换式为：\)</span> <span class="math display">\[X(z)=\sum_{n=-\infty}^{\infty}x(n)z^{-n}\]</span></p>
-<hr />
-<h1 id="典型序列的z变换">典型序列的Z变换</h1>
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">序列<span class="math inline">\(x(n)\)</span></th>
-<th style="text-align: center;">Z变换<span class="math inline">\((\lvert z\rvert&gt;\lvert a\rvert)\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><span class="math display">\[\delta(n)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[1\qquad \lvert z\rvert&gt;0\]</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math display">\[u(n)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{z}{z-1}\qquad \lvert z\rvert&gt;1\]</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math display">\[-u(-n-1)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{z}{z-1}\qquad \lvert z\rvert&lt;1\]</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math display">\[nu(n)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{z}{(z-1)^2}\qquad \lvert z\rvert&gt;1\]</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math display">\[a^nu(n)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{z}{z-a}\qquad \lvert z\rvert&gt;\lvert a\rvert\]</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math display">\[\sin(n\omega_0)u(n)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{z\sin\omega_0}{z^2-2z\cos\omega_0+1}\qquad \lvert z\rvert&gt;1\]</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math display">\[\cos(n\omega_0)u(n)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{z(z-\cos\omega_0)}{z^2-2z\cos\omega_0+1}\qquad \lvert z\rvert&gt;1\]</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math display">\[\beta^n\sin(n\omega_0)u(n)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{\beta z\sin\omega_0}{z^2-2\beta z\cos\omega_0+\beta^2}\qquad \lvert z\rvert&gt;\beta\]</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math display">\[\beta^n\cos(n\omega_0)u(n)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{z(z-\beta\cos\omega_0)}{z^2-2\beta z\cos\omega_0+\beta^2}\qquad \lvert z\rvert&gt;\beta\]</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math display">\[\sinh(n\omega_0)u(n)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{z\sinh\omega_0}{z^2-2z\cosh\omega_0+1}\qquad \lvert z\rvert&gt;\max{(\lvert e^{\omega_0}\rvert,\lvert e^{-\omega_0}\rvert)}\]</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math display">\[\cosh(n\omega_0)u(n)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{z(z-\cosh\omega_0)}{z^2-2z\cosh\omega_0+1}\qquad \lvert z\rvert&gt;\max{(\lvert e^{\omega_0}\rvert,\lvert e^{-\omega_0}\rvert)}\]</span></td>
-</tr>
-</tbody>
-</table>
-<h1 id="z变换的性质">Z变换的性质</h1>
-<table>
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">性质</th>
-<th style="text-align: center;">序列<span class="math inline">\(x(n)\)</span></th>
-<th style="text-align: center;">Z变换<span class="math inline">\(X(z)\)</span></th>
-<th style="text-align: center;"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><span class="math display">\[线性性质\]</span></td>
-<td style="text-align: center;"><span class="math display">\[ax_1(n)+bx_2(n)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[aX_1(z)+bX_2(z)\]</span></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math display">\[位移性质（双边z变换）\]</span></td>
-<td style="text-align: center;"><span class="math display">\[x(n\pm m)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[z^{\pm m}X(z)\]</span></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math display">\[位移性质（单边z变换）\]</span></td>
-<td style="text-align: center;"><span class="math display">\[x(n+m)u(n)\]</span> <span class="math display">\[x(n-m)u(n)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[z^m[X(z)-\sum_{k=0}^{m-1}x(k)z^{-k}]\]</span><span class="math display">\[z^{-m}[X(z)+\sum_{k=-m}^{-1}x(k)z^{-k}]\]</span></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math display">\[序列线性加权（z域微分）\]</span></td>
-<td style="text-align: center;"><span class="math display">\[n^mx(n)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\left[-z\frac{d}{dz}\right]^mX(z)\]</span></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math display">\[序列指数加权（z域尺度变换）\]</span></td>
-<td style="text-align: center;"><span class="math display">\[a^nx(n)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[X\left(\frac{z}{a}\right)\quad (R_{x1}&lt;\lvert\frac{z}{a}\rvert&lt;R_{x2})\]</span></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math display">\[z域积分\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{x(n)}{n+m}\]</span></td>
-<td style="text-align: center;"><span class="math display">\[z^m\int_{z}^{\infty}k^{-(m+1)}X(k)dk\]</span></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math display">\[时域卷积定理\]</span></td>
-<td style="text-align: center;"><span class="math display">\[x(n)\ast h(n)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[X(z)H(z)\quad\max(R_{x1},R_{h1})&lt;\lvert z\rvert&lt;\min(R_{x2},R_{h2})\]</span></td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><span class="math inline">\(序列相乘（z域卷积定理）：\)</span></li>
-</ul>
-<p><span class="math display">\[\begin{align*}
-\mathscr{Z}[x(n)h(n)]
-&amp; =\frac{1}{2\pi j}\oint_{C_1}X\left(\frac{z}{v}\right)H(v)v^{-1}dv\quad
-\\ 或 \\
-&amp; =\frac{1}{2\pi j}\oint_{C_2}X(v)H\left(\frac{z}{v}\right)v^{-1}dv
-\end{align*}\]</span></p>
-<p><span class="math inline">\(其中C_1，C_2分别为X\left(\frac{z}{v}\right)与H(v)或X(v)与H\left(\frac{z}{v}\right)收敛域重叠部分内逆时针旋转的围线\)</span> <span class="math inline">\(收敛域：R_{x1}R_{h1}&lt;|z|&lt;R_{x2}R_{h2}\)</span></p>
-<ul>
-<li><p><span class="math inline">\(初值定理\)</span> <span class="math display">\[若x(n)是因果序列，x(0)=\lim_{z\rightarrow\infty}X(z)\]</span></p></li>
-<li><p><span class="math inline">\(终值定理\)</span> <span class="math display">\[若x(n)是因果序列，x(\infty)=\lim_{z\rightarrow1}[(z-1)X(z)]\]</span> <span class="math inline">\(条件：X(z)的极点必须在单位圆内（在单位圆上只能位于z=\pm1且是一阶极点）\)</span></p></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>信号与系统</tag>
-        <tag>Z变换</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>拉普拉斯变换</title>
     <url>/2021/07/19/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2/</url>
     <content><![CDATA[<p><strong>拉普拉斯变换将信号从时域变换到了复频域，引入了衰减因子<span class="math inline">\(e^{-at}\)</span>，解决了部分发散信号不能进行傅里叶变换的问题。</strong> <span id="more"></span></p>
@@ -831,6 +631,206 @@ X_s(s)
       <tags>
         <tag>信号与系统</tag>
         <tag>拉普拉斯变换</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Z变换</title>
+    <url>/2021/08/18/%E7%A6%BB%E6%95%A3%E4%BF%A1%E5%8F%B7%E4%B8%8EZ%E5%8F%98%E6%8D%A2/</url>
+    <content><![CDATA[<p><strong>Z变换用于研究离散时间信号与系统</strong> <span id="more"></span></p>
+<h1 id="差分方程特解">差分方程特解</h1>
+<p>线性时不变系统输入与输出有相同的形式</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">输入<span class="math inline">\(x(n)\)</span></th>
+<th style="text-align: center;">输出<span class="math inline">\(y(n)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[e^{an}\]</span></td>
+<td style="text-align: center;"><span class="math display">\[Ae^{an}\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math display">\[\cos\omega n\]</span></td>
+<td style="text-align: center;"><span class="math display">\[A\cos(\omega n)+B\sin(\omega n)\]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[\sin\omega n\]</span></td>
+<td style="text-align: center;"><span class="math display">\[A\cos(\omega n)+B\sin(\omega n)\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math display">\[n^k\]</span></td>
+<td style="text-align: center;"><span class="math display">\[A_kn^k+A_{k-1}n^{k-1}+\cdots+A_1n+A_0\]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[A\]</span></td>
+<td style="text-align: center;"><span class="math display">\[C\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math display">\[r^n\]</span></td>
+<td style="text-align: center;"><span class="math display">\[Cr^n\]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[r^n（r与特征根重）\]</span></td>
+<td style="text-align: center;"><span class="math display">\[(C_1n+C_2)r^n\]</span></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="z变换的导出">Z变换的导出</h1>
+<p><span class="math inline">\(抽样信号的拉式变换\rightarrow离散信号的Z变换\)</span> <span class="math inline">\(信号的理想抽样：\)</span> <span class="math display">\[\begin{align*}
+x_s(t) &amp; =x(t)\cdot\delta_T(t) \\
+&amp; = x(t)\sum_{n=-\infty}^{\infty}\delta(t-nT) \\ 
+&amp; =\sum_{n=-\infty}^{\infty}x(nT)\delta(t-nT) \\
+\end{align*}\]</span></p>
+<p><span class="math inline">\(对x_s(t)取拉氏变换：\)</span> <span class="math display">\[\begin{align*}
+X_s(s) 
+&amp; =\mathscr{L}[x_s(t)]=\mathscr{L}\left[\sum_{n=-\infty}^{\infty}x(nT)\delta(t-nT)\right] \\
+&amp; =\sum_{n=-\infty}^{\infty}x(nT)\mathscr{L}[\delta(t-nT)] \\
+&amp; =\sum_{n=-\infty}^{\infty}x(nT)e^{-snT}
+\end{align*}\]</span></p>
+<p><span class="math inline">\(引入复变量：z=e^{sT}，令T=1，x(nT)=x(n)：\)</span> <span class="math display">\[\left.X_s(s)\right|_{z=e^{sT}}=\sum_{n=-\infty}^{\infty}x(n)z^{-n}=X(z)\]</span></p>
+<p><span class="math inline">\(对任一信号x(n)的（双边）z变换式为：\)</span> <span class="math display">\[X(z)=\sum_{n=-\infty}^{\infty}x(n)z^{-n}\]</span></p>
+<hr />
+<h1 id="典型序列的z变换">典型序列的Z变换</h1>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">序列<span class="math inline">\(x(n)\)</span></th>
+<th style="text-align: center;">Z变换<span class="math inline">\((\lvert z\rvert&gt;\lvert a\rvert)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[\delta(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[1\qquad \lvert z\rvert&lt;\infty\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math display">\[u(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\frac{z}{z-1}\qquad \lvert z\rvert&gt;1\]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[-u(-n-1)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\frac{z}{z-1}\qquad \lvert z\rvert&lt;1\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math display">\[nu(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\frac{z}{(z-1)^2}\qquad \lvert z\rvert&gt;1\]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[a^nu(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\frac{z}{z-a}\qquad \lvert z\rvert&gt;\lvert a\rvert\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math display">\[\sin(n\omega_0)u(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\frac{z\sin\omega_0}{z^2-2z\cos\omega_0+1}\qquad \lvert z\rvert&gt;1\]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[\cos(n\omega_0)u(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\frac{z(z-\cos\omega_0)}{z^2-2z\cos\omega_0+1}\qquad \lvert z\rvert&gt;1\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math display">\[\beta^n\sin(n\omega_0)u(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\frac{\beta z\sin\omega_0}{z^2-2\beta z\cos\omega_0+\beta^2}\qquad \lvert z\rvert&gt;\beta\]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[\beta^n\cos(n\omega_0)u(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\frac{z(z-\beta\cos\omega_0)}{z^2-2\beta z\cos\omega_0+\beta^2}\qquad \lvert z\rvert&gt;\beta\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math display">\[\sinh(n\omega_0)u(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\frac{z\sinh\omega_0}{z^2-2z\cosh\omega_0+1}\qquad \lvert z\rvert&gt;\max{(\lvert e^{\omega_0}\rvert,\lvert e^{-\omega_0}\rvert)}\]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[\cosh(n\omega_0)u(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\frac{z(z-\cosh\omega_0)}{z^2-2z\cosh\omega_0+1}\qquad \lvert z\rvert&gt;\max{(\lvert e^{\omega_0}\rvert,\lvert e^{-\omega_0}\rvert)}\]</span></td>
+</tr>
+</tbody>
+</table>
+<h1 id="z变换的性质">Z变换的性质</h1>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">性质</th>
+<th style="text-align: center;">序列<span class="math inline">\(x(n)\)</span></th>
+<th style="text-align: center;">Z变换<span class="math inline">\(X(z)\)</span></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[线性性质\]</span></td>
+<td style="text-align: center;"><span class="math display">\[ax_1(n)+bx_2(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[aX_1(z)+bX_2(z)\]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math display">\[位移性质（双边z变换）\]</span></td>
+<td style="text-align: center;"><span class="math display">\[x(n\pm m)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[z^{\pm m}X(z)\]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[位移性质（单边z变换）\]</span></td>
+<td style="text-align: center;"><span class="math display">\[x(n+m)u(n)\]</span> <span class="math display">\[x(n-m)u(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[z^m[X(z)-\sum_{k=0}^{m-1}x(k)z^{-k}]\]</span><span class="math display">\[z^{-m}[X(z)+\sum_{k=-m}^{-1}x(k)z^{-k}]\]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math display">\[序列线性加权（z域微分）\]</span></td>
+<td style="text-align: center;"><span class="math display">\[n^mx(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\left[-z\frac{d}{dz}\right]^mX(z)\]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[序列指数加权（z域尺度变换）\]</span></td>
+<td style="text-align: center;"><span class="math display">\[a^nx(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[X\left(\frac{z}{a}\right)\quad (R_{x1}&lt;\lvert\frac{z}{a}\rvert&lt;R_{x2})\]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math display">\[z域积分\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\frac{x(n)}{n+m}\]</span></td>
+<td style="text-align: center;"><span class="math display">\[z^m\int_{z}^{\infty}k^{-(m+1)}X(k)dk\]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[时域卷积定理\]</span></td>
+<td style="text-align: center;"><span class="math display">\[x(n)\ast h(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[X(z)H(z)\quad\max(R_{x1},R_{h1})&lt;\lvert z\rvert&lt;\min(R_{x2},R_{h2})\]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><span class="math inline">\(序列相乘（z域卷积定理）：\)</span></li>
+</ul>
+<p><span class="math display">\[\begin{align*}
+\mathscr{Z}[x(n)h(n)]
+&amp; =\frac{1}{2\pi j}\oint_{C_1}X\left(\frac{z}{v}\right)H(v)v^{-1}dv\quad
+\\ 或 \\
+&amp; =\frac{1}{2\pi j}\oint_{C_2}X(v)H\left(\frac{z}{v}\right)v^{-1}dv
+\end{align*}\]</span></p>
+<p><span class="math inline">\(其中C_1，C_2分别为X\left(\frac{z}{v}\right)与H(v)或X(v)与H\left(\frac{z}{v}\right)收敛域重叠部分内逆时针旋转的围线\)</span> <span class="math inline">\(收敛域：R_{x1}R_{h1}&lt;|z|&lt;R_{x2}R_{h2}\)</span></p>
+<ul>
+<li><p><span class="math inline">\(初值定理\)</span> <span class="math display">\[若x(n)是因果序列，x(0)=\lim_{z\rightarrow\infty}X(z)\]</span></p></li>
+<li><p><span class="math inline">\(终值定理\)</span> <span class="math display">\[若x(n)是因果序列，x(\infty)=\lim_{z\rightarrow1}[(z-1)X(z)]\]</span> <span class="math inline">\(条件：X(z)的极点必须在单位圆内（在单位圆上只能位于z=\pm1且是一阶极点）\)</span></p></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>信号与系统</tag>
+        <tag>Z变换</tag>
       </tags>
   </entry>
 </search>
