@@ -824,8 +824,19 @@ X_s(s)
 \end{align*}\]</span></p>
 <p><span class="math inline">\(其中C_1，C_2分别为X\left(\frac{z}{v}\right)与H(v)或X(v)与H\left(\frac{z}{v}\right)收敛域重叠部分内逆时针旋转的围线\)</span> <span class="math inline">\(收敛域：R_{x1}R_{h1}&lt;|z|&lt;R_{x2}R_{h2}\)</span></p>
 <ul>
-<li><p><span class="math inline">\(初值定理\)</span> <span class="math display">\[若x(n)是因果序列，x(0)=\lim_{z\rightarrow\infty}X(z)\]</span></p></li>
-<li><p><span class="math inline">\(终值定理\)</span> <span class="math display">\[若x(n)是因果序列，x(\infty)=\lim_{z\rightarrow1}[(z-1)X(z)]\]</span> <span class="math inline">\(条件：X(z)的极点必须在单位圆内（在单位圆上只能位于z=\pm1且是一阶极点）\)</span></p></li>
+<li><p><span class="math inline">\(初值定理\)</span> <span class="math inline">\(若在n&lt;M时，x(n)=0，即x(n)为右边序列时，有：\)</span></p>
+<p><span class="math display">\[\begin{align*}
+  x(M) &amp; =\lim_{z\rightarrow\infty}z^MX(z) \\
+  x(M+1) &amp; =\lim_{z\leftarrow\infty}[z^{M+1}F(z)-zf(M)] \\
+  x(M+2) &amp; =\lim_{z\leftarrow\infty}[z^{M+2}F(z)-z^2f(M)-zf(M+1)] \\
+  \end{align*}\]</span></p>
+<p><span class="math inline">\(若x(t)为因果序列，即M=0时：\)</span></p>
+<p><span class="math display">\[\begin{align*}
+  x(0) &amp; =\lim_{z\rightarrow\infty}X(z) \\
+  x(1) &amp; =\lim_{z\leftarrow\infty}[zF(z)-zf(0)] \\
+  x(2) &amp; =\lim_{z\leftarrow\infty}[z^2F(z)-z^2f(0)-zf(1)] \\
+  \end{align*}\]</span></p></li>
+<li><p><span class="math inline">\(终值定理\)</span> <span class="math display">\[若x(n)是右边序列，x(\infty)=\lim_{z\rightarrow1}[(z-1)X(z)]\]</span> <span class="math inline">\(条件：X(z)的极点必须在单位圆内（在单位圆上只能位于z=\pm1且是一阶极点）\)</span></p></li>
 </ul>
 ]]></content>
       <tags>
