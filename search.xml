@@ -1,114 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>信号与系统</title>
-    <url>/2021/07/20/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<p><strong>介绍了信号的分类、典型信号、信号的运算、信号的分解、系统的分类</strong></p>
-<span id="more"></span>
-<h1 id="信号">信号</h1>
-<hr />
-<h2 id="信号的分类">信号的分类</h2>
-<ul>
-<li><strong>连续信号和离散信号</strong></li>
-<li><strong>周期信号和非周期信号：</strong> 周期信号不一定有最小周期，例如：<span class="math inline">\(f(t)=A\)</span></li>
-<li><strong>能量信号和功率信号：</strong> 一个信号如果不是能量信号可能是功率信号，但是如果一个信号既不是能量信号也不是功率信号那么这个信号是<strong>功率无限信号</strong> 例如：<span class="math inline">\(f(t)=e^t\)</span></li>
-<li><strong>确定信号和随机信号：</strong> 确定信号：能给出确定的<span class="math inline">\(f(t)\)</span>的表达式 随机信号：只能知道信号可能的取值，具体的取值不确定</li>
-</ul>
-<hr />
-<h2 id="典型的信号">典型的信号</h2>
-<ul>
-<li><strong>指数信号：</strong> <span class="math display">\[f(t)=Ke^{-at}\quad t&gt;0\]</span></li>
-<li><strong>正弦信号：</strong> <span class="math display">\[f(t)=Ksin(\omega t+\theta)\]</span></li>
-<li><strong>复指数信号：</strong> <span class="math display">\[f(t)=Ke^{(\sigma+j\omega)t}=Ke^{\sigma t}cos(\omega t)+jKe^{\sigma t}sin(\omega t)\]</span></li>
-<li><strong>抽样信号：</strong> <span class="math display">\[Sa(t)=\frac{sin(t)}{t}\]</span></li>
-</ul>
-<p><span class="math display">\[\int_{-\infty}^{+\infty}Sa(t)dt=\pi\]</span></p>
-<p><span class="math display">\[sinc(t)=Sa(\pi t)=\frac{sin(\pi t)}{\pi t}\]</span></p>
-<hr />
-<h2 id="信号的运算">信号的运算</h2>
-<ul>
-<li><strong>移位、反褶、尺度变换</strong><br />
-移位：<span class="math inline">\(f(t)\rightarrow f(t\pm t_0)\)</span>，左加右减<br />
-反褶：<span class="math inline">\(f(t)\rightarrow f(-t)\)</span><br />
-尺度变换：<span class="math inline">\(f(t)\rightarrow f(at)\)</span><br />
-</li>
-<li><p><strong>微分、积分</strong><br />
-<font color=red>注意：跳变点微分之后会出现冲击，微分和积分不具有可逆性。</font><br />
-<span class="math display">\[\frac{d}{dt}\left[\int_{-\infty}^tf(\tau)d\tau\right]=f(t) \quad \int_{-\infty}^t\left[\frac{d}{d\tau}f(\tau)\right]d\tau\neq f(t)\]</span></p></li>
-<li><p><strong>相乘、相加</strong><br />
-<font color=red>注意：信号相乘或相加就是对应点相乘或相加。</font></p></li>
-</ul>
-<hr />
-<h2 id="信号的分解">信号的分解</h2>
-<ul>
-<li><p><strong>直流分量和交流分量</strong> <span class="math display">\[f(t)=f_D+f_A(t)\]</span></p>
-<p><span class="math display">\[f_D=\lim_{T\rightarrow\infty}\frac{1}{T}\int_{-T/2}^{T/2}f(t)dt \qquad \int_{-\infty}^{+\infty}f_A(t)dt=0\]</span></p>
-<p><span class="math display">\[
-  \begin{align*}
-  P
-  &amp; =\frac{1}{T}\int_{-T/2}^{T/2}f^2(t)dt=\frac{1}{T}\int_{-T/2}^{T/2}[f_D+f_A(t)]^2dt \\
-  &amp; =f_D^2+\frac{1}{T}\int_{-T/2}^{T/2}f_A^2(t)dt
-  \end{align*}
-  \]</span></p></li>
-<li><p><strong>奇分量和偶分量</strong> <span class="math display">\[f(t)=f_e(t)+f_o(t)\]</span></p>
-<p>其中：<span class="math inline">\(f_e(t)\)</span>是偶分量，<span class="math inline">\(f_o(t)\)</span>是奇分量</p>
-<p><span class="math display">\[f_e(t)=\frac{1}{2}[f(t)+f(-t)] \qquad f_o(t)=\frac{1}{2}[f(t)-f(-t)]\]</span></p></li>
-<li><p><strong>实部和虚部</strong> <span class="math display">\[f(t)=f_r(t)+jf_i(t)\]</span></p>
-<p><span class="math display">\[f^*(t)=f_r(t)-jf_i(t)\]</span></p>
-<p>其中：<span class="math inline">\(f_r(t)=\frac{1}{2}[f(t)+f^*(t)] \qquad f_i(t)=\frac{1}{2j}[f(t)-f^*(t)]\)</span></p></li>
-<li><p><strong>脉冲分量</strong> <span class="math display">\[
-  \begin{align*}
-  f(t)
-  &amp; =\lim_{\Delta\tau\rightarrow0}\sum_{\tau=-\infty}^{+\infty}f(\tau)[u(t-\tau)-u(t-\tau-\Delta\tau)] \\
-  &amp; =\lim_{\Delta\tau\rightarrow0}\sum_{\tau=-\infty}^{+\infty}f(\tau)\frac{[u(t-\tau)-u(t-\tau-\Delta\tau)]}{\Delta\tau}\Delta\tau \\
-  &amp; =\int_{-\infty}^{+\infty}f(\tau)\delta(t-\tau)d\tau
-  \end{align*}
-  \]</span></p></li>
-</ul>
-<hr />
-<h1 id="系统">系统</h1>
-<hr />
-<h2 id="系统的分类">系统的分类</h2>
-<ul>
-<li>连续时间系统与离散时间系统</li>
-<li>线性系统与非线性系统</li>
-<li>时变系统与时不变系统</li>
-<li>可逆系统与不可逆系统</li>
-<li>因果系统与非因果系统</li>
-</ul>
-<h2 id="线性时不变系统">线性时不变系统</h2>
-<h3 id="叠加性与均匀性">叠加性与均匀性</h3>
-<p><strong>规则：线系统后叠加 <span class="math inline">\(\substack{?\\=}\)</span> 先叠加后系统</strong><br />
-系统模型：<span class="math inline">\(r(t)=f[e(t)]\)</span><br />
-先系统后叠加：<span class="math inline">\(a_1f[e_1(t)]+a_2f[e_2(t)]\)</span><br />
-先叠加后系统：<span class="math inline">\(f[a_1e_1(t)+a_2e_2(t)]\)</span><br />
-判断：<span class="math inline">\(f[a_1e_1(t)+a_2e_2(t)]\substack{?\\=}a_1f[e_1(t)]+a_2f[e_2(t)]\)</span><br />
-典型非线性系统：<span class="math inline">\(r(t)=e^2(t) \qquad r(t)=e(t)+A\)</span></p>
-<h3 id="时不变特性">时不变特性</h3>
-<p><strong>规则：线系统后延时 <span class="math inline">\(\substack{?\\=}\)</span> 先延时后系统</strong><br />
-系统模型：<span class="math inline">\(r(t)=f[e(t)]\)</span><br />
-先系统后延时：<span class="math inline">\(r(t-t_0)\)</span><br />
-先延时后系统：<span class="math inline">\(f[e(t-t_0)]\)</span><br />
-判断：<span class="math inline">\(r(t-t_0)\substack{?\\=}f[e(t-t_0)]\)</span><br />
-典型时变系统：<span class="math inline">\(r(t)=te(t) \quad r(t)=t+e(t) \quad r(t)=e(at),a\neq1\)</span></p>
-<h3 id="因果性">因果性</h3>
-<p><strong>规则：输出与未来的输入值无关</strong><br />
-典型非因果系统：<span class="math inline">\(r(t)=e(-t) \qquad r(t)=e(2t)\)</span><br />
-<font color=red>注意：<span class="math inline">\(r(t)=cos(t+5)e(t)\)</span>为因果</font></p>
-<h3 id="即时性动态性">即时性（动态性）</h3>
-<p><strong>规则：当前输出仅仅与当前输入有关</strong><br />
-典型动态系统：微积分系统，非因果系统</p>
-<h3 id="微分特性">微分特性</h3>
-<p><strong>规则：输入微分则输出也微分</strong></p>
-<h3 id="可逆系统">可逆系统</h3>
-<p><strong>规则：不存在多个输入对应一个输出</strong></p>
-<hr />
-]]></content>
-      <tags>
-        <tag>信号与系统</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>傅里叶级数与傅里叶变换</title>
     <url>/2021/07/19/%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/</url>
     <content><![CDATA[<p><strong>傅里叶变换能够将信号从时域变换到频域，使对信号的分析更加容易</strong></p>
@@ -385,6 +277,325 @@ F(\omega)
       </tags>
   </entry>
   <entry>
+    <title>信号与系统</title>
+    <url>/2021/07/20/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p><strong>介绍了信号的分类、典型信号、信号的运算、信号的分解、系统的分类</strong></p>
+<span id="more"></span>
+<h1 id="信号">信号</h1>
+<hr />
+<h2 id="信号的分类">信号的分类</h2>
+<ul>
+<li><strong>连续信号和离散信号</strong></li>
+<li><strong>周期信号和非周期信号：</strong> 周期信号不一定有最小周期，例如：<span class="math inline">\(f(t)=A\)</span></li>
+<li><strong>能量信号和功率信号：</strong> 一个信号如果不是能量信号可能是功率信号，但是如果一个信号既不是能量信号也不是功率信号那么这个信号是<strong>功率无限信号</strong> 例如：<span class="math inline">\(f(t)=e^t\)</span></li>
+<li><strong>确定信号和随机信号：</strong> 确定信号：能给出确定的<span class="math inline">\(f(t)\)</span>的表达式 随机信号：只能知道信号可能的取值，具体的取值不确定</li>
+</ul>
+<hr />
+<h2 id="典型的信号">典型的信号</h2>
+<ul>
+<li><strong>指数信号：</strong> <span class="math display">\[f(t)=Ke^{-at}\quad t&gt;0\]</span></li>
+<li><strong>正弦信号：</strong> <span class="math display">\[f(t)=Ksin(\omega t+\theta)\]</span></li>
+<li><strong>复指数信号：</strong> <span class="math display">\[f(t)=Ke^{(\sigma+j\omega)t}=Ke^{\sigma t}cos(\omega t)+jKe^{\sigma t}sin(\omega t)\]</span></li>
+<li><strong>抽样信号：</strong> <span class="math display">\[Sa(t)=\frac{sin(t)}{t}\]</span></li>
+</ul>
+<p><span class="math display">\[\int_{-\infty}^{+\infty}Sa(t)dt=\pi\]</span></p>
+<p><span class="math display">\[sinc(t)=Sa(\pi t)=\frac{sin(\pi t)}{\pi t}\]</span></p>
+<hr />
+<h2 id="信号的运算">信号的运算</h2>
+<ul>
+<li><strong>移位、反褶、尺度变换</strong><br />
+移位：<span class="math inline">\(f(t)\rightarrow f(t\pm t_0)\)</span>，左加右减<br />
+反褶：<span class="math inline">\(f(t)\rightarrow f(-t)\)</span><br />
+尺度变换：<span class="math inline">\(f(t)\rightarrow f(at)\)</span><br />
+</li>
+<li><p><strong>微分、积分</strong><br />
+<font color=red>注意：跳变点微分之后会出现冲击，微分和积分不具有可逆性。</font><br />
+<span class="math display">\[\frac{d}{dt}\left[\int_{-\infty}^tf(\tau)d\tau\right]=f(t) \quad \int_{-\infty}^t\left[\frac{d}{d\tau}f(\tau)\right]d\tau\neq f(t)\]</span></p></li>
+<li><p><strong>相乘、相加</strong><br />
+<font color=red>注意：信号相乘或相加就是对应点相乘或相加。</font></p></li>
+</ul>
+<hr />
+<h2 id="信号的分解">信号的分解</h2>
+<ul>
+<li><p><strong>直流分量和交流分量</strong> <span class="math display">\[f(t)=f_D+f_A(t)\]</span></p>
+<p><span class="math display">\[f_D=\lim_{T\rightarrow\infty}\frac{1}{T}\int_{-T/2}^{T/2}f(t)dt \qquad \int_{-\infty}^{+\infty}f_A(t)dt=0\]</span></p>
+<p><span class="math display">\[
+  \begin{align*}
+  P
+  &amp; =\frac{1}{T}\int_{-T/2}^{T/2}f^2(t)dt=\frac{1}{T}\int_{-T/2}^{T/2}[f_D+f_A(t)]^2dt \\
+  &amp; =f_D^2+\frac{1}{T}\int_{-T/2}^{T/2}f_A^2(t)dt
+  \end{align*}
+  \]</span></p></li>
+<li><p><strong>奇分量和偶分量</strong> <span class="math display">\[f(t)=f_e(t)+f_o(t)\]</span></p>
+<p>其中：<span class="math inline">\(f_e(t)\)</span>是偶分量，<span class="math inline">\(f_o(t)\)</span>是奇分量</p>
+<p><span class="math display">\[f_e(t)=\frac{1}{2}[f(t)+f(-t)] \qquad f_o(t)=\frac{1}{2}[f(t)-f(-t)]\]</span></p></li>
+<li><p><strong>实部和虚部</strong> <span class="math display">\[f(t)=f_r(t)+jf_i(t)\]</span></p>
+<p><span class="math display">\[f^*(t)=f_r(t)-jf_i(t)\]</span></p>
+<p>其中：<span class="math inline">\(f_r(t)=\frac{1}{2}[f(t)+f^*(t)] \qquad f_i(t)=\frac{1}{2j}[f(t)-f^*(t)]\)</span></p></li>
+<li><p><strong>脉冲分量</strong> <span class="math display">\[
+  \begin{align*}
+  f(t)
+  &amp; =\lim_{\Delta\tau\rightarrow0}\sum_{\tau=-\infty}^{+\infty}f(\tau)[u(t-\tau)-u(t-\tau-\Delta\tau)] \\
+  &amp; =\lim_{\Delta\tau\rightarrow0}\sum_{\tau=-\infty}^{+\infty}f(\tau)\frac{[u(t-\tau)-u(t-\tau-\Delta\tau)]}{\Delta\tau}\Delta\tau \\
+  &amp; =\int_{-\infty}^{+\infty}f(\tau)\delta(t-\tau)d\tau
+  \end{align*}
+  \]</span></p></li>
+</ul>
+<hr />
+<h1 id="系统">系统</h1>
+<hr />
+<h2 id="系统的分类">系统的分类</h2>
+<ul>
+<li>连续时间系统与离散时间系统</li>
+<li>线性系统与非线性系统</li>
+<li>时变系统与时不变系统</li>
+<li>可逆系统与不可逆系统</li>
+<li>因果系统与非因果系统</li>
+</ul>
+<h2 id="线性时不变系统">线性时不变系统</h2>
+<h3 id="叠加性与均匀性">叠加性与均匀性</h3>
+<p><strong>规则：线系统后叠加 <span class="math inline">\(\substack{?\\=}\)</span> 先叠加后系统</strong><br />
+系统模型：<span class="math inline">\(r(t)=f[e(t)]\)</span><br />
+先系统后叠加：<span class="math inline">\(a_1f[e_1(t)]+a_2f[e_2(t)]\)</span><br />
+先叠加后系统：<span class="math inline">\(f[a_1e_1(t)+a_2e_2(t)]\)</span><br />
+判断：<span class="math inline">\(f[a_1e_1(t)+a_2e_2(t)]\substack{?\\=}a_1f[e_1(t)]+a_2f[e_2(t)]\)</span><br />
+典型非线性系统：<span class="math inline">\(r(t)=e^2(t) \qquad r(t)=e(t)+A\)</span></p>
+<h3 id="时不变特性">时不变特性</h3>
+<p><strong>规则：线系统后延时 <span class="math inline">\(\substack{?\\=}\)</span> 先延时后系统</strong><br />
+系统模型：<span class="math inline">\(r(t)=f[e(t)]\)</span><br />
+先系统后延时：<span class="math inline">\(r(t-t_0)\)</span><br />
+先延时后系统：<span class="math inline">\(f[e(t-t_0)]\)</span><br />
+判断：<span class="math inline">\(r(t-t_0)\substack{?\\=}f[e(t-t_0)]\)</span><br />
+典型时变系统：<span class="math inline">\(r(t)=te(t) \quad r(t)=t+e(t) \quad r(t)=e(at),a\neq1\)</span></p>
+<h3 id="因果性">因果性</h3>
+<p><strong>规则：输出与未来的输入值无关</strong><br />
+典型非因果系统：<span class="math inline">\(r(t)=e(-t) \qquad r(t)=e(2t)\)</span><br />
+<font color=red>注意：<span class="math inline">\(r(t)=cos(t+5)e(t)\)</span>为因果</font></p>
+<h3 id="即时性动态性">即时性（动态性）</h3>
+<p><strong>规则：当前输出仅仅与当前输入有关</strong><br />
+典型动态系统：微积分系统，非因果系统</p>
+<h3 id="微分特性">微分特性</h3>
+<p><strong>规则：输入微分则输出也微分</strong></p>
+<h3 id="可逆系统">可逆系统</h3>
+<p><strong>规则：不存在多个输入对应一个输出</strong></p>
+<hr />
+]]></content>
+      <tags>
+        <tag>信号与系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Z变换</title>
+    <url>/2021/08/18/%E7%A6%BB%E6%95%A3%E4%BF%A1%E5%8F%B7%E4%B8%8EZ%E5%8F%98%E6%8D%A2/</url>
+    <content><![CDATA[<p><strong>Z变换用于研究离散时间信号与系统</strong> <span id="more"></span></p>
+<h1 id="差分方程特解">差分方程特解</h1>
+<p>线性时不变系统输入与输出有相同的形式</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">输入<span class="math inline">\(x(n)\)</span></th>
+<th style="text-align: center;">输出<span class="math inline">\(y(n)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[e^{an}\]</span></td>
+<td style="text-align: center;"><span class="math display">\[Ae^{an}\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math display">\[\cos\omega n\]</span></td>
+<td style="text-align: center;"><span class="math display">\[A\cos(\omega n)+B\sin(\omega n)\]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[\sin\omega n\]</span></td>
+<td style="text-align: center;"><span class="math display">\[A\cos(\omega n)+B\sin(\omega n)\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math display">\[n^k\]</span></td>
+<td style="text-align: center;"><span class="math display">\[A_kn^k+A_{k-1}n^{k-1}+\cdots+A_1n+A_0\]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[A\]</span></td>
+<td style="text-align: center;"><span class="math display">\[C\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math display">\[r^n\]</span></td>
+<td style="text-align: center;"><span class="math display">\[Cr^n\]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[r^n（r与特征根重）\]</span></td>
+<td style="text-align: center;"><span class="math display">\[(C_1n+C_2)r^n\]</span></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="z变换的导出">Z变换的导出</h1>
+<p><span class="math inline">\(抽样信号的拉式变换\rightarrow离散信号的Z变换\)</span> <span class="math inline">\(信号的理想抽样：\)</span> <span class="math display">\[\begin{align*}
+x_s(t) &amp; =x(t)\cdot\delta_T(t) \\
+&amp; = x(t)\sum_{n=-\infty}^{\infty}\delta(t-nT) \\ 
+&amp; =\sum_{n=-\infty}^{\infty}x(nT)\delta(t-nT) \\
+\end{align*}\]</span></p>
+<p><span class="math inline">\(对x_s(t)取拉氏变换：\)</span> <span class="math display">\[\begin{align*}
+X_s(s) 
+&amp; =\mathscr{L}[x_s(t)]=\mathscr{L}\left[\sum_{n=-\infty}^{\infty}x(nT)\delta(t-nT)\right] \\
+&amp; =\sum_{n=-\infty}^{\infty}x(nT)\mathscr{L}[\delta(t-nT)] \\
+&amp; =\sum_{n=-\infty}^{\infty}x(nT)e^{-snT}
+\end{align*}\]</span></p>
+<p><span class="math inline">\(引入复变量：z=e^{sT}，令T=1，x(nT)=x(n)：\)</span> <span class="math display">\[\left.X_s(s)\right|_{z=e^{sT}}=\sum_{n=-\infty}^{\infty}x(n)z^{-n}=X(z)\]</span></p>
+<p><span class="math inline">\(对任一信号x(n)的（双边）z变换式为：\)</span> <span class="math display">\[X(z)=\sum_{n=-\infty}^{\infty}x(n)z^{-n}\]</span></p>
+<hr />
+<h1 id="典型序列的z变换">典型序列的Z变换</h1>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">序列<span class="math inline">\(x(n)\)</span></th>
+<th style="text-align: center;">Z变换<span class="math inline">\((\lvert z\rvert&gt;\lvert a\rvert)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[\delta(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[1\qquad \lvert z\rvert&lt;\infty\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math display">\[u(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\frac{z}{z-1}\qquad \lvert z\rvert&gt;1\]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[-u(-n-1)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\frac{z}{z-1}\qquad \lvert z\rvert&lt;1\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math display">\[nu(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\frac{z}{(z-1)^2}\qquad \lvert z\rvert&gt;1\]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[a^nu(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\frac{z}{z-a}\qquad \lvert z\rvert&gt;\lvert a\rvert\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math display">\[\sin(n\omega_0)u(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\frac{z\sin\omega_0}{z^2-2z\cos\omega_0+1}\qquad \lvert z\rvert&gt;1\]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[\cos(n\omega_0)u(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\frac{z(z-\cos\omega_0)}{z^2-2z\cos\omega_0+1}\qquad \lvert z\rvert&gt;1\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math display">\[\beta^n\sin(n\omega_0)u(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\frac{\beta z\sin\omega_0}{z^2-2\beta z\cos\omega_0+\beta^2}\qquad \lvert z\rvert&gt;\beta\]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[\beta^n\cos(n\omega_0)u(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\frac{z(z-\beta\cos\omega_0)}{z^2-2\beta z\cos\omega_0+\beta^2}\qquad \lvert z\rvert&gt;\beta\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math display">\[\sinh(n\omega_0)u(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\frac{z\sinh\omega_0}{z^2-2z\cosh\omega_0+1}\qquad \lvert z\rvert&gt;\max{(\lvert e^{\omega_0}\rvert,\lvert e^{-\omega_0}\rvert)}\]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[\cosh(n\omega_0)u(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\frac{z(z-\cosh\omega_0)}{z^2-2z\cosh\omega_0+1}\qquad \lvert z\rvert&gt;\max{(\lvert e^{\omega_0}\rvert,\lvert e^{-\omega_0}\rvert)}\]</span></td>
+</tr>
+</tbody>
+</table>
+<h1 id="z变换的性质">Z变换的性质</h1>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">性质</th>
+<th style="text-align: center;">序列<span class="math inline">\(x(n)\)</span></th>
+<th style="text-align: center;">Z变换<span class="math inline">\(X(z)\)</span></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[线性性质\]</span></td>
+<td style="text-align: center;"><span class="math display">\[ax_1(n)+bx_2(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[aX_1(z)+bX_2(z)\]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math display">\[位移性质（双边z变换）\]</span></td>
+<td style="text-align: center;"><span class="math display">\[x(n\pm m)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[z^{\pm m}X(z)\]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[位移性质（单边z变换）\]</span></td>
+<td style="text-align: center;"><span class="math display">\[x(n+m)u(n)\]</span> <span class="math display">\[x(n-m)u(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[z^m[X(z)-\sum_{k=0}^{m-1}x(k)z^{-k}]\]</span><span class="math display">\[z^{-m}[X(z)+\sum_{k=-m}^{-1}x(k)z^{-k}]\]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math display">\[序列线性加权（z域微分）\]</span></td>
+<td style="text-align: center;"><span class="math display">\[n^mx(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\left[-z\frac{d}{dz}\right]^mX(z)\]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[序列指数加权（z域尺度变换）\]</span></td>
+<td style="text-align: center;"><span class="math display">\[a^nx(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[X\left(\frac{z}{a}\right)\quad (R_{x1}&lt;\lvert\frac{z}{a}\rvert&lt;R_{x2})\]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math display">\[z域积分\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\frac{x(n)}{n+m}\]</span></td>
+<td style="text-align: center;"><span class="math display">\[z^m\int_{z}^{\infty}k^{-(m+1)}X(k)dk\]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[时域卷积定理\]</span></td>
+<td style="text-align: center;"><span class="math display">\[x(n)\ast h(n)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[X(z)H(z)\quad\max(R_{x1},R_{h1})&lt;\lvert z\rvert&lt;\min(R_{x2},R_{h2})\]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><span class="math inline">\(序列相乘（z域卷积定理）：\)</span></li>
+</ul>
+<p><span class="math display">\[\begin{align*}
+\mathscr{Z}[x(n)h(n)]
+&amp; =\frac{1}{2\pi j}\oint_{C_1}X\left(\frac{z}{v}\right)H(v)v^{-1}dv\quad
+\\ 或 \\
+&amp; =\frac{1}{2\pi j}\oint_{C_2}X(v)H\left(\frac{z}{v}\right)v^{-1}dv
+\end{align*}\]</span></p>
+<p><span class="math inline">\(其中C_1，C_2分别为X\left(\frac{z}{v}\right)与H(v)或X(v)与H\left(\frac{z}{v}\right)收敛域重叠部分内逆时针旋转的围线\)</span> <span class="math inline">\(收敛域：R_{x1}R_{h1}&lt;|z|&lt;R_{x2}R_{h2}\)</span></p>
+<ul>
+<li><p><span class="math inline">\(初值定理\)</span> <span class="math inline">\(若在n&lt;M时，x(n)=0，即x(n)为右边序列时，有：\)</span></p>
+<p><span class="math display">\[\begin{align*}
+  x(M) &amp; =\lim_{z\rightarrow\infty}z^MX(z) \\
+  x(M+1) &amp; =\lim_{z\leftarrow\infty}[z^{M+1}F(z)-zf(M)] \\
+  x(M+2) &amp; =\lim_{z\leftarrow\infty}[z^{M+2}F(z)-z^2f(M)-zf(M+1)] \\
+  \end{align*}\]</span></p>
+<p><span class="math inline">\(若x(t)为因果序列，即M=0时：\)</span></p>
+<p><span class="math display">\[\begin{align*}
+  x(0) &amp; =\lim_{z\rightarrow\infty}X(z) \\
+  x(1) &amp; =\lim_{z\leftarrow\infty}[zF(z)-zf(0)] \\
+  x(2) &amp; =\lim_{z\leftarrow\infty}[z^2F(z)-z^2f(0)-zf(1)] \\
+  \end{align*}\]</span></p></li>
+<li><p><span class="math inline">\(终值定理\)</span> <span class="math display">\[若x(n)是右边序列，x(\infty)=\lim_{z\rightarrow1}[(z-1)X(z)]\]</span> <span class="math inline">\(条件：X(z)的极点必须在单位圆内（在单位圆上只能位于z=\pm1且是一阶极点）\)</span></p></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>信号与系统</tag>
+        <tag>Z变换</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>希尔伯特变换</title>
     <url>/2021/07/19/%E5%B8%8C%E5%B0%94%E4%BC%AF%E7%89%B9%E5%8F%98%E6%8D%A2/</url>
     <content><![CDATA[<p><strong>希尔伯特变换能改变信号的相位</strong></p>
@@ -631,217 +842,6 @@ F(\omega)
       <tags>
         <tag>信号与系统</tag>
         <tag>拉普拉斯变换</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Z变换</title>
-    <url>/2021/08/18/%E7%A6%BB%E6%95%A3%E4%BF%A1%E5%8F%B7%E4%B8%8EZ%E5%8F%98%E6%8D%A2/</url>
-    <content><![CDATA[<p><strong>Z变换用于研究离散时间信号与系统</strong> <span id="more"></span></p>
-<h1 id="差分方程特解">差分方程特解</h1>
-<p>线性时不变系统输入与输出有相同的形式</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">输入<span class="math inline">\(x(n)\)</span></th>
-<th style="text-align: center;">输出<span class="math inline">\(y(n)\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><span class="math display">\[e^{an}\]</span></td>
-<td style="text-align: center;"><span class="math display">\[Ae^{an}\]</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math display">\[\cos\omega n\]</span></td>
-<td style="text-align: center;"><span class="math display">\[A\cos(\omega n)+B\sin(\omega n)\]</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math display">\[\sin\omega n\]</span></td>
-<td style="text-align: center;"><span class="math display">\[A\cos(\omega n)+B\sin(\omega n)\]</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math display">\[n^k\]</span></td>
-<td style="text-align: center;"><span class="math display">\[A_kn^k+A_{k-1}n^{k-1}+\cdots+A_1n+A_0\]</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math display">\[A\]</span></td>
-<td style="text-align: center;"><span class="math display">\[C\]</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math display">\[r^n\]</span></td>
-<td style="text-align: center;"><span class="math display">\[Cr^n\]</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math display">\[r^n（r与特征根重）\]</span></td>
-<td style="text-align: center;"><span class="math display">\[(C_1n+C_2)r^n\]</span></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h1 id="z变换的导出">Z变换的导出</h1>
-<p><span class="math inline">\(抽样信号的拉式变换\rightarrow离散信号的Z变换\)</span> <span class="math inline">\(信号的理想抽样：\)</span> <span class="math display">\[\begin{align*}
-x_s(t) &amp; =x(t)\cdot\delta_T(t) \\
-&amp; = x(t)\sum_{n=-\infty}^{\infty}\delta(t-nT) \\ 
-&amp; =\sum_{n=-\infty}^{\infty}x(nT)\delta(t-nT) \\
-\end{align*}\]</span></p>
-<p><span class="math inline">\(对x_s(t)取拉氏变换：\)</span> <span class="math display">\[\begin{align*}
-X_s(s) 
-&amp; =\mathscr{L}[x_s(t)]=\mathscr{L}\left[\sum_{n=-\infty}^{\infty}x(nT)\delta(t-nT)\right] \\
-&amp; =\sum_{n=-\infty}^{\infty}x(nT)\mathscr{L}[\delta(t-nT)] \\
-&amp; =\sum_{n=-\infty}^{\infty}x(nT)e^{-snT}
-\end{align*}\]</span></p>
-<p><span class="math inline">\(引入复变量：z=e^{sT}，令T=1，x(nT)=x(n)：\)</span> <span class="math display">\[\left.X_s(s)\right|_{z=e^{sT}}=\sum_{n=-\infty}^{\infty}x(n)z^{-n}=X(z)\]</span></p>
-<p><span class="math inline">\(对任一信号x(n)的（双边）z变换式为：\)</span> <span class="math display">\[X(z)=\sum_{n=-\infty}^{\infty}x(n)z^{-n}\]</span></p>
-<hr />
-<h1 id="典型序列的z变换">典型序列的Z变换</h1>
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">序列<span class="math inline">\(x(n)\)</span></th>
-<th style="text-align: center;">Z变换<span class="math inline">\((\lvert z\rvert&gt;\lvert a\rvert)\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><span class="math display">\[\delta(n)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[1\qquad \lvert z\rvert&lt;\infty\]</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math display">\[u(n)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{z}{z-1}\qquad \lvert z\rvert&gt;1\]</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math display">\[-u(-n-1)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{z}{z-1}\qquad \lvert z\rvert&lt;1\]</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math display">\[nu(n)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{z}{(z-1)^2}\qquad \lvert z\rvert&gt;1\]</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math display">\[a^nu(n)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{z}{z-a}\qquad \lvert z\rvert&gt;\lvert a\rvert\]</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math display">\[\sin(n\omega_0)u(n)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{z\sin\omega_0}{z^2-2z\cos\omega_0+1}\qquad \lvert z\rvert&gt;1\]</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math display">\[\cos(n\omega_0)u(n)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{z(z-\cos\omega_0)}{z^2-2z\cos\omega_0+1}\qquad \lvert z\rvert&gt;1\]</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math display">\[\beta^n\sin(n\omega_0)u(n)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{\beta z\sin\omega_0}{z^2-2\beta z\cos\omega_0+\beta^2}\qquad \lvert z\rvert&gt;\beta\]</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math display">\[\beta^n\cos(n\omega_0)u(n)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{z(z-\beta\cos\omega_0)}{z^2-2\beta z\cos\omega_0+\beta^2}\qquad \lvert z\rvert&gt;\beta\]</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math display">\[\sinh(n\omega_0)u(n)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{z\sinh\omega_0}{z^2-2z\cosh\omega_0+1}\qquad \lvert z\rvert&gt;\max{(\lvert e^{\omega_0}\rvert,\lvert e^{-\omega_0}\rvert)}\]</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math display">\[\cosh(n\omega_0)u(n)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{z(z-\cosh\omega_0)}{z^2-2z\cosh\omega_0+1}\qquad \lvert z\rvert&gt;\max{(\lvert e^{\omega_0}\rvert,\lvert e^{-\omega_0}\rvert)}\]</span></td>
-</tr>
-</tbody>
-</table>
-<h1 id="z变换的性质">Z变换的性质</h1>
-<table>
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">性质</th>
-<th style="text-align: center;">序列<span class="math inline">\(x(n)\)</span></th>
-<th style="text-align: center;">Z变换<span class="math inline">\(X(z)\)</span></th>
-<th style="text-align: center;"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><span class="math display">\[线性性质\]</span></td>
-<td style="text-align: center;"><span class="math display">\[ax_1(n)+bx_2(n)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[aX_1(z)+bX_2(z)\]</span></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math display">\[位移性质（双边z变换）\]</span></td>
-<td style="text-align: center;"><span class="math display">\[x(n\pm m)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[z^{\pm m}X(z)\]</span></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math display">\[位移性质（单边z变换）\]</span></td>
-<td style="text-align: center;"><span class="math display">\[x(n+m)u(n)\]</span> <span class="math display">\[x(n-m)u(n)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[z^m[X(z)-\sum_{k=0}^{m-1}x(k)z^{-k}]\]</span><span class="math display">\[z^{-m}[X(z)+\sum_{k=-m}^{-1}x(k)z^{-k}]\]</span></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math display">\[序列线性加权（z域微分）\]</span></td>
-<td style="text-align: center;"><span class="math display">\[n^mx(n)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\left[-z\frac{d}{dz}\right]^mX(z)\]</span></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math display">\[序列指数加权（z域尺度变换）\]</span></td>
-<td style="text-align: center;"><span class="math display">\[a^nx(n)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[X\left(\frac{z}{a}\right)\quad (R_{x1}&lt;\lvert\frac{z}{a}\rvert&lt;R_{x2})\]</span></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math display">\[z域积分\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{x(n)}{n+m}\]</span></td>
-<td style="text-align: center;"><span class="math display">\[z^m\int_{z}^{\infty}k^{-(m+1)}X(k)dk\]</span></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math display">\[时域卷积定理\]</span></td>
-<td style="text-align: center;"><span class="math display">\[x(n)\ast h(n)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[X(z)H(z)\quad\max(R_{x1},R_{h1})&lt;\lvert z\rvert&lt;\min(R_{x2},R_{h2})\]</span></td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><span class="math inline">\(序列相乘（z域卷积定理）：\)</span></li>
-</ul>
-<p><span class="math display">\[\begin{align*}
-\mathscr{Z}[x(n)h(n)]
-&amp; =\frac{1}{2\pi j}\oint_{C_1}X\left(\frac{z}{v}\right)H(v)v^{-1}dv\quad
-\\ 或 \\
-&amp; =\frac{1}{2\pi j}\oint_{C_2}X(v)H\left(\frac{z}{v}\right)v^{-1}dv
-\end{align*}\]</span></p>
-<p><span class="math inline">\(其中C_1，C_2分别为X\left(\frac{z}{v}\right)与H(v)或X(v)与H\left(\frac{z}{v}\right)收敛域重叠部分内逆时针旋转的围线\)</span> <span class="math inline">\(收敛域：R_{x1}R_{h1}&lt;|z|&lt;R_{x2}R_{h2}\)</span></p>
-<ul>
-<li><p><span class="math inline">\(初值定理\)</span> <span class="math inline">\(若在n&lt;M时，x(n)=0，即x(n)为右边序列时，有：\)</span></p>
-<p><span class="math display">\[\begin{align*}
-  x(M) &amp; =\lim_{z\rightarrow\infty}z^MX(z) \\
-  x(M+1) &amp; =\lim_{z\leftarrow\infty}[z^{M+1}F(z)-zf(M)] \\
-  x(M+2) &amp; =\lim_{z\leftarrow\infty}[z^{M+2}F(z)-z^2f(M)-zf(M+1)] \\
-  \end{align*}\]</span></p>
-<p><span class="math inline">\(若x(t)为因果序列，即M=0时：\)</span></p>
-<p><span class="math display">\[\begin{align*}
-  x(0) &amp; =\lim_{z\rightarrow\infty}X(z) \\
-  x(1) &amp; =\lim_{z\leftarrow\infty}[zF(z)-zf(0)] \\
-  x(2) &amp; =\lim_{z\leftarrow\infty}[z^2F(z)-z^2f(0)-zf(1)] \\
-  \end{align*}\]</span></p></li>
-<li><p><span class="math inline">\(终值定理\)</span> <span class="math display">\[若x(n)是右边序列，x(\infty)=\lim_{z\rightarrow1}[(z-1)X(z)]\]</span> <span class="math inline">\(条件：X(z)的极点必须在单位圆内（在单位圆上只能位于z=\pm1且是一阶极点）\)</span></p></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>信号与系统</tag>
-        <tag>Z变换</tag>
       </tags>
   </entry>
 </search>
